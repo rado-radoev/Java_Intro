@@ -6,8 +6,8 @@ public class Asterisk {
       if (i % 2 == 0) {
         System.out.println(str);
       }
-      Else {
-        System.out.println(" " + str)
+      else {
+        System.out.println(" " + str);
       }
     }
   }

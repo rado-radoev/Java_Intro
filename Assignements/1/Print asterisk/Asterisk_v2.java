@@ -1,4 +1,4 @@
-public class Asterisk {
+public class Asterisk_v2 {
   public static void main(String[] args) {
     String str = "* * * * * * * *\n" +
     " * * * * * * * *\n" +
@@ -7,8 +7,7 @@ public class Asterisk {
     "* * * * * * * *\n" +
     " * * * * * * * *\n" +
     "* * * * * * * *\n" +
-    " * * * * * * * *" +;
-
+    " * * * * * * * *";
     System.out.println(str);
   }
 }
