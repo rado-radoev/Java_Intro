@@ -1,0 +1,1 @@
+This project contains excercies from the Telerik book - Introduction to programming.

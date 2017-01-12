@@ -1,0 +1,8 @@
+
+public class Introduction {
+
+	public static void Main (String[] args){
+		int twoFiftySixInHex = 0x100;
+		System.out.println(twoFiftySixInHex);
+	}
+}

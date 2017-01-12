@@ -1,0 +1,14 @@
+
+public class Introduction {
+	public static void main (String[] args){
+		int twoFiftySixInHex = 0x100;
+		System.out.println(twoFiftySixInHex);
+		
+		String hello = "Hello";
+		String world = "World";
+		Object obj = hello + " " + world;
+		
+		System.out.println(obj);
+
+	}
+}
