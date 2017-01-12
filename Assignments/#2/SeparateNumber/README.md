@@ -1,0 +1,3 @@
+Write an application that inputs one number consisting of five digits from the user, separate the number into its individual digits and prints the digits separated from one another by three spaces each. For example, if the user types in the number 42339, the program should print 4   2   3   3   9 – You will need to use
+The modulo operator % which is nothing more than “remainder after division”, for instance 12 % 10 would be 2
+Integer division /, for instance 12 / 10 would be 1

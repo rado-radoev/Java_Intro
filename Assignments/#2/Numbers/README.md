@@ -1,0 +1,1 @@
+Write an application that inputs free integers from the user and displays the sum, average, product, smallest, and largest of the numbers. To determine the largest and smallest number use Math.min(x, y) and Math.max(x,y) – see https://examples.javacodegeeks.com/core-java/math/find-minimum-of-numbers-with-math-min/ for more details on those.
