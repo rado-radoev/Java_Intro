@@ -34,26 +34,5 @@ public class Introduction {
 		System.out.println("Now two:");
 		System.out.println(two);
 		
-		
-		boolean a = true;
-		boolean b = true;
-		
-		
-		/** DeMorgan Laws*/
-		/** (a && b) = true
-		 * 	!(a && b) = false
-		 * 
-		 * (!a || !b) = false
-		 */
-		
-		/**
-		 * (a || b) = true
-		 * !(a || b ) = false
-		 * (!a && !b) = false
-		 */
-		
-		System.out.println(!a || !b);
-		
-		
 	}
 }
