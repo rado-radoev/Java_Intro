@@ -59,7 +59,7 @@ public class Introduction {
 		short d = 5;
 		
 		
-		System.out.println( c | d); // 0000 0111 = 7
+		//System.out.println( c | d); // 0000 0111 = 7
 		System.out.println( c & d); // 0000 0001 = 1
 		System.out.println( c ^ d); // 0000 0110 = 6
 		System.out.println(~c & d); // 0000 0100 = 4

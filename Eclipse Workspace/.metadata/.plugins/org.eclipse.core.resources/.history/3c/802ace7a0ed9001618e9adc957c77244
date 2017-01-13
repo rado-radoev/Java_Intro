@@ -59,13 +59,7 @@ public class Introduction {
 		short d = 5;
 		
 		
-		System.out.println( c | d); // 0000 0111 = 7
-		System.out.println( c & d); // 0000 0001 = 1
-		System.out.println( c ^ d); // 0000 0110 = 6
-		System.out.println(~c & d); // 0000 0100 = 4
-		System.out.println(c << 1); // 0000 0110 = 6
-		System.out.println(c << 2); // 0000 1100 = 12
-		System.out.println(c >> 1); // 0000 0001 = 1
+		System.out.print(c | d);
 		
 	}
 }
