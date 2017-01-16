@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class WorkingBoot extends Shoe {
+
+	public WorkingBoot(int size) {
+		super(size);
+		// TODO Auto-generated constructor stub
+	}
+	
+	static public void main(String args[]) {
+		WorkingBoot shoe = new WorkingBoot(7);
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter working boot size:");
+		shoe.size = scanner.nextInt();
+		shoe.showSize();
+		
+		scanner.close();
+	}
+	
+	void showSize() {
+		System.out.println("Size: " + this.size);
+	}
+
+
+}

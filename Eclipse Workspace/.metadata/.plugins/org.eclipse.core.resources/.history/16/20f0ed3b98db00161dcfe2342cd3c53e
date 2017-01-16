@@ -1,0 +1,9 @@
+
+public class DressShoe extends Shoe {
+
+	public DressShoe(int size) {
+		super(size);
+		// TODO Auto-generated constructor stub
+	}
+
+}

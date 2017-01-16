@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class DressShoe extends Shoe {
+
+	public DressShoe(int size) {
+		super(size);
+		// TODO Auto-generated constructor stub
+	}
+	
+	static public void main(String args[]) {
+		DressShoe shoe = new DressShoe(7);
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter dress shoe size:");
+		shoe.size = scanner.nextInt();
+		shoe.showSize();
+		
+		scanner.close();
+	}
+	
+	void showSize() {
+		System.out.println("Dress shoe size: " + this.size);
+	}
+
+}
