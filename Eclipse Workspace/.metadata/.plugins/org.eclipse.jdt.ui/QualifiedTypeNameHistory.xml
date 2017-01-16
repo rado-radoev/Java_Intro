@@ -5,4 +5,11 @@
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="Chapter_2SuperClass"/>
+<fullyQualifiedTypeName name="javax.swing.SpringLayout.Constraints"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Constructor"/>
+<fullyQualifiedTypeName name="Cat"/>
+<fullyQualifiedTypeName name="Pet"/>
+<fullyQualifiedTypeName name="Fish"/>
+<fullyQualifiedTypeName name="DressShoe"/>
+<fullyQualifiedTypeName name="WorkingBoot"/>
 </qualifiedTypeNameHistroy>
