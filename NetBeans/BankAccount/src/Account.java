@@ -9,6 +9,7 @@
  * @author regradra
  */
 public class Account {
+<<<<<<< HEAD
     String accountName;
     String accountCurrency;
     String accountOwner;
@@ -32,4 +33,7 @@ public class Account {
     public void DisplayAccountOwner (String accountOwner) {
         System.out.println("Account Owner is: " + accountOwner);
     }
+=======
+    
+>>>>>>> 1aed1cbd88a5930fbf72b075bad7006f8e94ea77
 }
