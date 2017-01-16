@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+
+/**
+ * @author superlamer
+ *
+ */
+public class Cat extends Pets {
+
+	/**
+	 * 
+	 */
+	public Cat() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

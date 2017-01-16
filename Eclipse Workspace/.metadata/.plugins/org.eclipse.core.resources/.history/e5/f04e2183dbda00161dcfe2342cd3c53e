@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+
+/**
+ * @author superlamer
+ *
+ */
+public class Fish extends Pets {
+
+	/**
+	 * The fish has a name, can swim, and eats.
+	 */
+	public Fish() {
+
+					
+		}
+	}
+
+}

@@ -26,16 +26,17 @@ public class Calculations {
 		int number1 = scanner.nextInt();			
 		System.out.printf("Enter second number: ");
 		int number2 = scanner.nextInt();	
+		System.out.printf("Enter third number: ");
+		int number3 = scanner.nextInt();	
 
 		/** Make calculations.*/
-		Number.Sum(number1, number2);
-		Number.Average(number1, number2);
-		Number.Product(number1, number2);
-		Number.Min(number1, number2);
-		Number.Max(number1, number2);
+		Number.Sum(number1, number2, number3);
+		Number.Average(number1, number2, number3);
+		Number.Product(number1, number2, number3);
+		Number.Min(number1, number2, number3);
+		Number.Max(number1, number2, number3);
 		
 		/** Close scanner object.*/
 		scanner.close();
 	}
-
 }

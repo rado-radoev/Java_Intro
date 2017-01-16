@@ -1,0 +1,30 @@
+
+public class Cat {
+
+	private String name;
+	
+	public Cat (String name) {
+		setName(name);
+	}
+	
+	public String getName ()
+	{
+		return name;
+	}
+	
+	public void setName (String name) {
+		this.name = name;
+	}
+	
+	public void SayMiow () {
+		System.out.printf("%s says miow\n",getName());
+	}
+	
+	public void CatchFish () {
+		System.out.printf("%s cought a fish\n",getName());
+	}
+	
+	public void Sleep () {
+		System.out.printf("%s is a sleep\n", getName());
+	}
+}

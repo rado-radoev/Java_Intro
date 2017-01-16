@@ -1,0 +1,25 @@
+
+public class Fish {
+
+	private String name;
+	
+	public Fish (String name) {
+		setName(name);
+	}
+	
+	public String getName () {
+		return name;
+	}
+	
+	public void setName (String name) {
+		this.name = name;
+	}
+	
+	public void Swim () {
+		System.out.printf("%s is swinning in the Pacific", getName());
+	}
+	
+	public void Eat () {
+		System.out.printf("%s is eating", getName());
+	}
+}
