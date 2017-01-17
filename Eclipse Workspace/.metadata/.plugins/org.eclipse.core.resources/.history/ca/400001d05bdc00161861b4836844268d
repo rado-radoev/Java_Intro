@@ -1,0 +1,12 @@
+
+public class Car_Main {
+
+		public static void main(String[] args) {
+			Car ford = new Car();
+			
+			System.out.println(ford.color);
+			
+			ford.color = "White";
+			System.out.println(ford.color);
+		}
+}
