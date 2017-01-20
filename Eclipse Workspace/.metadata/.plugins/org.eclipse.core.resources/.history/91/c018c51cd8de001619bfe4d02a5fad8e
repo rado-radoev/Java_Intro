@@ -1,0 +1,19 @@
+
+public class ColaVendingMachine {
+
+	/**
+	 * Create a class machine
+	 * Create a class bottle
+	 * 
+	 * static field how many bottles are in the machine
+	 * final field how many a cola costs
+	 * 
+	 * method to subtract 1 from total bottles field
+	 * method to buy a bottle
+	 * method to display how much a bottle costs and how much the client was charged
+	 * method to restock bottles
+	 * 
+	 * dispaly how many bottles are left
+	 * display how many bottles are restocked
+	 */
+}
