@@ -1,0 +1,27 @@
+import java.util.function.BinaryOperator;
+
+public class FunctionFX {
+	
+	/**
+	 * f(x) = 2x +3
+		f(x) = x2 + 3x + 9
+		f(x) = x3 + 4x + 7
+	 * @param args
+	 */
+	
+	BinaryOperator<Integer> f = (x,y) -> x + y;
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+		FunctionFX f = new FunctionFX();
+		int x = 5;
+		int y = 8;
+		
+		System.out.println(f.f.apply(x, y));
+
+	}
+
+}
