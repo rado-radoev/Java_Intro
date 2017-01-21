@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="SeparateNumbers"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="Chapter_2SuperClass"/>
@@ -13,13 +12,23 @@
 <fullyQualifiedTypeName name="WorkingBoot"/>
 <fullyQualifiedTypeName name="Invoice"/>
 <fullyQualifiedTypeName name="org.omg.Messaging.SyncScopeHelper"/>
-<fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="ColaVendingMachine"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
+=======
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="FunctionFX"/>
+<fullyQualifiedTypeName name="java.util.function.BinaryOperator"/>
+<fullyQualifiedTypeName name="java.util.function.UnaryOperator"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="Giraffe"/>
+<fullyQualifiedTypeName name="ColaBottle"/>
+<fullyQualifiedTypeName name="ColaVendingMachine"/>
+>>>>>>> master
 </qualifiedTypeNameHistroy>

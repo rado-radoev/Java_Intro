@@ -1948,7 +1948,11 @@ java.lang.IllegalStateException: Registry Directory not available: c:\Program Fi
 	at org.eclipse.oomph.setup.ui.SetupUIPlugin.access$5(SetupUIPlugin.java:414)
 	at org.eclipse.oomph.setup.ui.SetupUIPlugin$1$1.run(SetupUIPlugin.java:253)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+<<<<<<< HEAD
 !SESSION 2017-01-20 08:37:42.083 -----------------------------------------------
+=======
+!SESSION 2017-01-19 20:18:50.933 -----------------------------------------------
+>>>>>>> master
 eclipse.buildId=4.6.2.M20161124-1400
 java.version=1.8.0_112
 java.vendor=Oracle Corporation
@@ -1956,6 +1960,7 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Framework arguments:  -product org.eclipse.epp.package.java.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.equinox.p2.reconciler.dropins 4 0 2017-01-20 08:37:43.774
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
@@ -2055,10 +2060,16 @@ java.lang.IllegalStateException: Registry Directory not available: c:\Program Fi
 !ENTRY org.eclipse.egit.ui 2 0 2017-01-20 08:37:51.988
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'F:\'. If this is
+=======
+!ENTRY org.eclipse.egit.ui 2 0 2017-01-19 20:18:57.338
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\superlamer'. If this is
+>>>>>>> master
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.oomph.setup.ui 4 0 2017-01-20 08:38:04.518
 !MESSAGE Registry Directory not available: c:\Program Files\Eclipse\eclipse\p2\org.eclipse.equinox.p2.engine\profileRegistry.
 !STACK 0
@@ -2092,6 +2103,26 @@ java.lang.IllegalStateException: Registry Directory not available: c:\Program Fi
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 
 !ENTRY org.eclipse.recommenders.models.rcp 1 11 2017-01-20 10:54:49.856
+=======
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-01-19 20:31:32.706
+!MESSAGE Server returned lastModified <= 0 for https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite/content.jar
+!SESSION 2017-01-19 21:24:07.478 -----------------------------------------------
+eclipse.buildId=4.6.2.M20161124-1400
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-01-19 21:24:14.582
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\superlamer'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.recommenders.models.rcp 1 11 2017-01-19 21:26:04.277
+>>>>>>> master
 !MESSAGE The model index service was accessed either before it started or after it finished running.
 !STACK 0
 org.eclipse.recommenders.utils.Logs$LogTraceException
@@ -2185,3 +2216,9 @@ org.eclipse.recommenders.utils.Logs$LogTraceException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+<<<<<<< HEAD
+=======
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-01-19 21:31:34.946
+!MESSAGE Server returned lastModified <= 0 for https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite/content.jar
+>>>>>>> master
