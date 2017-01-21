@@ -1,9 +1,0 @@
-
-public class RunningShoe extends Shoe {
-
-	public RunningShoe(int size) {
-		super(size);
-		// TODO Auto-generated constructor stub
-	}
-
-}

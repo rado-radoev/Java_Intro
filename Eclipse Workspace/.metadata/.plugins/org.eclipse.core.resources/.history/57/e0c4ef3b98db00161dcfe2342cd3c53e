@@ -1,9 +1,0 @@
-
-public class WorkingBoot extends Shoe {
-
-	public WorkingBoot(int size) {
-		super(size);
-		// TODO Auto-generated constructor stub
-	}
-
-}

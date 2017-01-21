@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;ConstructorOverloading&apos; to &apos;Dog&apos;&#x0D;&#x0A;- Original project: &apos;Temp&apos;&#x0D;&#x0A;- Original element: &apos;ConstructorOverloading&apos;&#x0D;&#x0A;- Renamed element: &apos;Dog&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Rename similarly named elements&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ConstructorOverloading&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{ConstructorOverloading.java[ConstructorOverloading" matchStrategy="1" name="Dog" qualified="false" references="true" similarDeclarations="true" stamp="1484706251589" textual="false" version="1.0"/>
-</session>
