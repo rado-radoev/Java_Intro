@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+INDEX VERSION 1.129+C:\GitHub\Java\Eclipse Workspace\.metadata\.plugins\org.eclipse.jdt.core
+1176810388.index
+1865180864.index
+2312603293.index
+1744221617.index
+1016025034.index
+1089088800.index
+2984517695.index
+1122244091.index
+842721601.index
+745392580.index
+=======
 INDEX VERSION 1.129+D:\GitHub\Java\Eclipse Workspace\.metadata\.plugins\org.eclipse.jdt.core
 1865180864.index
 745392580.index
@@ -8,3 +21,4 @@ INDEX VERSION 1.129+D:\GitHub\Java\Eclipse Workspace\.metadata\.plugins\org.ecli
 842721601.index
 2984517695.index
 1122244091.index
+>>>>>>> master

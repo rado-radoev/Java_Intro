@@ -18,9 +18,15 @@ public class FunctionFX {
 	public static void main(String[] args) {
 		// Create FunctionFX object
 		FunctionFX f = new FunctionFX();
+<<<<<<< HEAD
+		double x = 5d;
+		
+		// Invoke lambda expressions and print output
+=======
 		double x = 5;
 		
 		// Ivoke lambda expressions and print output
+>>>>>>> master
 		System.out.println(f.f.apply(x, 3D));
 		System.out.println(f.fx.apply(x));
 		System.out.println(f.ff.apply(x));
