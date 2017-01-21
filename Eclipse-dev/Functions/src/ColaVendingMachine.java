@@ -12,8 +12,6 @@ public class ColaVendingMachine {
 	 * method to buy a bottle
 	 * method to display how much a bottle costs and how much the client was charged
 	 * method to restock bottles
-	 * 
-<<<<<<< HEAD
 	 * display how many bottles are left
 	 * display how many bottles are restocked
 	 */
@@ -30,7 +28,7 @@ public class ColaVendingMachine {
 		setBottleInventory(bottlesInventory);
 	}
 	
-	// Getther for bottle inventory
+	// Getter for bottle inventory
 	public int getBottleInventory () {
 		return bottlesInventory;
 	}
@@ -41,26 +39,12 @@ public class ColaVendingMachine {
 	}
 	
 	// Subtract the number of bought bottles from the machine's inventory
-=======
-	 * dispaly how many bottles are left
-	 * display how many bottles are restocked
-	 */
-	
-	private static int bottlesInventory = 100;
-	private static int machineInventoryLimit = 200;
-	private double price = new ColaBottle().getColaPrice();
-	
-	public ColaVendingMachine () {}
-	
->>>>>>> master
 	public void SubtractBottlesInventory(int bottlesBought) {
 		bottlesInventory -= bottlesBought;
 	}
 	
-<<<<<<< HEAD
-	// Dispaly bottle price, total purchase cost and invoke SubtractBottlesInventory method
-=======
->>>>>>> master
+
+	// Display bottle price, total purchase cost and invoke SubtractBottlesInventory method
 	public void BuyBottle (int bottlesBought) {
 		System.out.printf("Customer bought %s bottles of cola.%n",bottlesBought);
 		System.out.printf("One bottle of cola costs: $%s%n", price);
@@ -68,7 +52,7 @@ public class ColaVendingMachine {
 		SubtractBottlesInventory(bottlesBought);
 	}
 	
-<<<<<<< HEAD
+
 	// Restock the machine. If restocking amount exceeds machine limit, display message. Else set iventory.
 	public void Restcok (int bottlesRestocked) {
 		if (bottlesRestocked + getBottleInventory() > machineInventoryLimit) {
@@ -83,27 +67,7 @@ public class ColaVendingMachine {
 		System.out.println("The vending machine currently has: " + getBottleInventory() + " bottles left");
 	}
 	
-		
-=======
-	// PERFORM CHECKS HERE ??
-	public void Restcok (int bottlesRestocked) {
-		bottlesInventory += bottlesRestocked;
-	}
-	
-	public void DisplayInventory () {
-		System.out.println("The vending machine currently has: " + bottlesInventory + " bottles left");
-	}
-	
-	// TO DO: PERFORM CHECKS HERE ?
-	private boolean CheckInventoryLimit () {
-		if (machineInventoryLimit > 200) {
-			return true;
-		}
-		return false;
-	}
-	
-	
->>>>>>> master
+
 	public static void main(String[] args) {
 		ColaVendingMachine cvm = new ColaVendingMachine();
 		cvm.DisplayInventory();
@@ -111,11 +75,11 @@ public class ColaVendingMachine {
 		cvm.DisplayInventory();
 		
 		System.out.println("--- Restocking machine ---");
-<<<<<<< HEAD
+
 		cvm.Restcok(20);
-=======
-		cvm.Restcok(150);		// TO DO: Add limit to restocking or to the vending machine.
->>>>>>> master
+
+		cvm.Restcok(150);
+
 		cvm.DisplayInventory();
 	}
 	

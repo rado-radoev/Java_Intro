@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="CatShelter/src"/>
+	<classpathentry kind="src" path="EnvironemntVariables/src"/>
+	<classpathentry kind="src" path="Functions/src"/>
+	<classpathentry kind="src" path="Numbers/src"/>
+	<classpathentry kind="src" path="Pets/src"/>
+	<classpathentry kind="src" path="SeparateNumber/src"/>
+	<classpathentry kind="src" path="ShoeExample/src"/>
+	<classpathentry kind="src" path="Store/src"/>
+	<classpathentry kind="src" path="TelerikBook/src"/>
+	<classpathentry kind="src" path="Temp/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="CatShelter/bin"/>
+</classpath>
