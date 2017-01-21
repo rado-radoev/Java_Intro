@@ -58,7 +58,27 @@
 		<item value="600" key="width"/>
 		<item value="400" key="height"/>
 	</section>
+	<section name="FatJarPackageWizard">
+		<item value="C:\GitHub\Java\Eclipse Workspace" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
+		<item value="EnvMap - EnvironemntVariables" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="\\shcsd\sharp\soc\profiles\regradra\Desktop\temp\EnvMap.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
+		<item value="1" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
+		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="\\shcsd\sharp\soc\profiles\regradra\Desktop\temp\EnvMap.jar"/>
+		</list>
+		<list key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION_HISTORY">
+			<item value="C:\GitHub\Java\Eclipse Workspace.xml"/>
+			<item value=".xml"/>
+		</list>
+	</section>
+	<section name="ClasspathContainerSelectionPage">
+		<item value="0" key="index"/>
+	</section>
 	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="BuildPathsPropertyPage">
+		<item value="0" key="pageIndex"/>
 	</section>
 	<section name="completion_proposal_size">
 		<item value="221" key="contextSelector.size.y"/>
