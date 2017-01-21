@@ -3,13 +3,6 @@ import java.util.function.UnaryOperator;
 
 public class FunctionFX {
 	
-	/**
-	 *  f(x) = 2x +3
-		f(x) = x2 + 3x + 9
-		f(x) = x3 + 4x + 7
-	 * @param args
-	 */
-	
 	// Lambda expressions
 	UnaryOperator<Double> fx = x -> x*x;
 	BinaryOperator<Double> f = (x,y) -> { return ((x*x) + (3*x) + 9); };
@@ -20,7 +13,7 @@ public class FunctionFX {
 		FunctionFX f = new FunctionFX();
 		double x = 5d;
 		
-		// Ivoke lambda expressions and print output
+		// Invoke lambda expressions and print output
 		System.out.println(f.f.apply(x, 3D));
 		System.out.println(f.fx.apply(x));
 		System.out.println(f.ff.apply(x));

@@ -1,21 +1,7 @@
 
 public class ColaVendingMachine {
-
-	/**
-	 * Create a class machine
-	 * Create a class bottle
-	 * 
-	 * static field how many bottles are in the machine
-	 * final field how many a cola costs
-	 * 
-	 * method to subtract 1 from total bottles field
-	 * method to buy a bottle
-	 * method to display how much a bottle costs and how much the client was charged
-	 * method to restock bottles
-	 * display how many bottles are left
-	 * display how many bottles are restocked
-	 */
 	
+	// Vending machine attributes
 	private int bottlesInventory = 100;
 	private final int machineInventoryLimit = 200;
 	private double price = new ColaBottle().getColaPrice();
@@ -56,7 +42,8 @@ public class ColaVendingMachine {
 	// Restock the machine. If restocking amount exceeds machine limit, display message. Else set iventory.
 	public void Restcok (int bottlesRestocked) {
 		if (bottlesRestocked + getBottleInventory() > machineInventoryLimit) {
-			System.out.println("Vending machine can only hold 200 bottles. Limit exceeded.");
+			System.out.println("Vending machine can only hold 200 bottles. Inventory limit exceeded. ");
+			System.out.println("You can only load " + (machineInventoryLimit - getBottleInventory()) +  " bottles");
 			return;
 		}
 		setBottleInventory(bottlesRestocked + getBottleInventory());
@@ -74,12 +61,9 @@ public class ColaVendingMachine {
 		cvm.BuyBottle(10);
 		cvm.DisplayInventory();
 		
-		System.out.println("--- Restocking machine ---");
-
-		cvm.Restcok(20);
+		System.out.println("\n--- Restocking machine ---\n");
 
 		cvm.Restcok(150);
-
 		cvm.DisplayInventory();
 	}
 	
