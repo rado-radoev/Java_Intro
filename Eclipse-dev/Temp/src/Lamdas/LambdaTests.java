@@ -5,19 +5,18 @@ interface BinaryCalculator {
 }
 
 interface DisplayOnScreen {
-	void display(String s);
+	void display();
 }
 
 public class LambdaTests {
     public static void main(String[] args) {
 
        BinaryCalculator addFunction = (a, b) ->  a + b;
-       DisplayOnScreen displayText = s -> s = "Hello";
+       DisplayOnScreen dispOnScr = () -> System.out.print("hello");
        
     	
        System.out.println(calculate((a, b) -> a + b,18,35));
        System.out.println(LambdaTests.calculate(addFunction, 5, 20));
-       System.out.println(displayText);
        
        
     }
@@ -26,7 +25,7 @@ public class LambdaTests {
     	return calc.calculate(a, b);
     }
     
-    public static void display (DisplayOnScreen disp) {
-//    	System.out.println(disp.display("Hello World"));
-    }
+//    public static void display (DisplayOnScreen disp) {
+//    	System.out.print(disp.display("Hello World"));
+//    }
 }
