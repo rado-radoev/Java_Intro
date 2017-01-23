@@ -13,9 +13,13 @@ public class LambdaTests {
     public static void main(String[] args) {
 
        MyLambda lambdaFunction = () -> System.out.println("Hello World!");
-       MyAdd addFunction = (int a, int b) ->  a + b;
+       MyAdd addFunction = (a, b) ->  a + b;
        
-//       doubleNumberFunction = (int a) -> a * 2;
-//       SafeDivideFunction = (int a, int b) -> b == 0 ? 0 : a /b;
+       LambdaTests.AddNumbers(addFunction);
+       
+    }
+    
+    public static int AddNumbers (MyAdd addition, int a, int b) {
+    	return addition.sum(a, b);
     }
 }

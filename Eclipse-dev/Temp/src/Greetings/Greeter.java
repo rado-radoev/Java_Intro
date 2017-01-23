@@ -18,6 +18,9 @@ public class Greeter {
 		BinaryOperator<Integer> addFunction = (a, b) -> a + b;
 		BinaryOperator<Integer> safeDivideFunction = (a, b) -> b == 0 ? 0 : a / b;
 		
+		System.out.println(addFunc.apply(10, 5));
+		System.out.println(addFunction.apply(10, 20));
+		System.out.println(safeDivideFunction.apply(0, 5));
 		
 		greeter.greet(lambdaGreeting);
 	}
