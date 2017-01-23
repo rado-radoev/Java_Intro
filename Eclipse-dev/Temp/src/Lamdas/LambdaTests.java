@@ -1,31 +1,31 @@
 package Lamdas;
-@FunctionalInterface
-interface BinaryCalculator {
-	int calculate(int a, int b);
-}
 
-interface DisplayOnScreen {
-	void display();
-}
+import java.util.function.Consumer;
 
 public class LambdaTests {
     public static void main(String[] args) {
 
        BinaryCalculator addFunction = (a, b) ->  a + b;
-       DisplayOnScreen dispOnScr = () -> System.out.print("hello");
        
-    	
+       BinaryCalculator divideFunction = (a,b) -> b == 0 ? 0 : a / b;
+       
+       Consumer<String> displayText = (s) -> System.out.println("helooooo");
+    
+       LambdaTests.display(displayText,"");
+       	
        System.out.println(calculate((a, b) -> a + b,18,35));
        System.out.println(LambdaTests.calculate(addFunction, 5, 20));
        
-       
+       System.out.println(LambdaTests.calculate(divideFunction, 15, 5));
+       System.out.println(calculate((a,b) -> a / b,15,35));
     }
     
     public static int calculate (BinaryCalculator calc, int a, int b) {
     	return calc.calculate(a, b);
     }
     
-//    public static void display (DisplayOnScreen disp) {
-//    	System.out.print(disp.display("Hello World"));
-//    }
+    public static void display(Consumer<String> consumer, String s) {
+    	consumer.accept(s);
+    }
+    
 }
