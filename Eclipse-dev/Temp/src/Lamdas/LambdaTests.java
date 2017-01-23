@@ -1,25 +1,32 @@
 package Lamdas;
 @FunctionalInterface
-interface MyLambda {
-	void foo();
+interface BinaryCalculator {
+	int calculate(int a, int b);
 }
 
-@FunctionalInterface
-interface MyAdd {
-	int sum(int a, int b);
+interface DisplayOnScreen {
+	void display(String s);
 }
 
 public class LambdaTests {
     public static void main(String[] args) {
 
-       MyLambda lambdaFunction = () -> System.out.println("Hello World!");
-       MyAdd addFunction = (a, b) ->  a + b;
+       BinaryCalculator addFunction = (a, b) ->  a + b;
+       DisplayOnScreen displayText = s -> s = "Hello";
        
-       LambdaTests.AddNumbers(addFunction);
+    	
+       System.out.println(calculate((a, b) -> a + b,18,35));
+       System.out.println(LambdaTests.calculate(addFunction, 5, 20));
+       System.out.println(displayText);
+       
        
     }
     
-    public static int AddNumbers (MyAdd addition, int a, int b) {
-    	return addition.sum(a, b);
+    public static int calculate (BinaryCalculator calc, int a, int b) {
+    	return calc.calculate(a, b);
+    }
+    
+    public static void display (DisplayOnScreen disp) {
+//    	System.out.println(disp.display("Hello World"));
     }
 }
