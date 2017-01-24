@@ -28,7 +28,15 @@ public class LambdaTest {
 		// This method will print another black whole lambda but with parameters
 		ParameterBlackHole paramBlackHo = s -> System.out.println(s);
 		disposeInParameterizedBlackHole(paramBlackHo, "This is string parameter that goes into the black hole");
-
+		
+		// Create interface instance
+		IntToDouble itd = a -> a + 0.21D;
+		System.out.println(convertIntToDouble(itd, 112));
+		
+		// invoke method directly
+		convertIntToDouble(a -> a , 5);
+		System.out.println(convertIntToDouble((a) -> a , 5));
+		
 	}
 	
 	// method for DoubleIntegerArithmetics interface
