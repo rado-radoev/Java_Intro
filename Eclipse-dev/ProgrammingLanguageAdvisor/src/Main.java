@@ -16,20 +16,20 @@ public class Main {
 			System.out.println("6. Ruby");
 		};
 		
-		// Display main menu
-		System.out.println("Choose your prefered programming language:\n");
-		languages.run();
-		System.out.println("\nType 'exit' to quit.");
-		
 		// Lambda expression for shorter println
 		Consumer<String> disp = s -> System.out.println(s);
 		
 		// Lambda expression to check strings values for equality
 		BiPredicate<String, String> compare = (str1, str2) -> str1.equals(str2);
 		
+		// Display main menu
+		disp.accept("Choose your prefered programming language:\n");
+		languages.run();
+		disp.accept("\nType 'exit' to quit.");
+		
 		// Instantiate scanner object
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Which language do you choose?: ");
+		disp.accept("Which language do you choose? ");
 		String usrLang = scanner.nextLine().toLowerCase();
 		
 		// Loops through choices while user enters exit
@@ -53,17 +53,16 @@ public class Main {
 				disp.accept("Are you sure?");
 			}
 			else {
-				disp.accept("Choose from one of the displayed languages.");
+				System.out.print("Choose from one of the displayed languages:\n");
 				languages.run();
 			}
-			System.out.print("Choose another language: ");
+			disp.accept("Choose another language: ");
 			usrLang = scanner.nextLine().toLowerCase();
 		}
 		
+		// Goodbye message
 		disp.accept("\n --- Terminating program ---");
 		disp.accept("Goodbye!");
-		
-		
 		
 		// Close scanner object
 		scanner.close();
