@@ -1,0 +1,36 @@
+Logic in real life
+
+One day in code:
+
+if (Alarm.Ringing()) {
+    WakeUp();
+}
+
+While (Ready()) {
+    WashFace();
+    GetDressed();
+    DrinkCoffee();
+}
+
+If (raining) {
+    bringUmbrella();
+} Else {
+    getSunglasses(object sunglasses);
+}
+
+void Drive(string destination) {
+    this.person.direction = destinationl;
+}
+
+Drive(String ToWork);
+While (hour.equals(17:00)) {
+    Work.hard();
+    If (lazy) {
+        work.relax();
+    }
+}
+Work.Stop();
+Drive(String home);
+WatchTV();
+EatDinner();
+GoToSleep();

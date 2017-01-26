@@ -1,0 +1,10 @@
+What are the benefits for using functions?
+
+
+There are a few benefits of using functions. Probably the most important one is organizing the code. For small and simple applications it is really easy to put all the code in the main method, but for large applications that are a few thousands or even more lines of code that would be impossible to maintain.
+
+Another reason would be the code reusability. Once a function is created it is almost like a smaller program inside the main program. It executes whatever code it needs to execute and either outputs something or not. But once it is created and tested it can always be reused in the code. The only thing a programmer would need to know is the name of the function, the parameters it accepts and the return values. They don't need to know how it works.
+
+It is easier to update a function. You only need to upda one small peace of code an all the other code that uses this function would also have access to the new features added to the function.
+
+And lastly it is easy to test one function and be done with it other then testing a few thousand lines of code. 
