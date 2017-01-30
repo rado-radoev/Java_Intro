@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 
 public class EnvMap {
-
+/*
 	public static void main(String[] args) {
 		try {
 			// getenv returns null if nothing is detected
@@ -38,4 +38,5 @@ public class EnvMap {
 			System.out.println(e);
 		}
 	}
+*/
 }
