@@ -1,0 +1,6 @@
+Arrays in real life  	
+Arrays are a fundamental data structure so let's see if we can spot arrays in real life. If you for instance live in an apartment complex there might be several mailboxes in a row creating an array of mail. Find some other real world examples of arrays.
+
+
+Shopping list is an Array of objects to buy (groceries)
+A pack of water bottles is type of Array
