@@ -1,14 +1,17 @@
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class StoreInts {
 
 	public static void main(String[] args) {
-		List<Integer> newList = new ArrayList<Integer>();
+		List<Integer> newList  = new ArrayList<Integer>();
+		LinkedList<Integer> newLinkedList = new LinkedList<>();
 		Scanner scanner = new Scanner(System.in);
 		int num = 1;
-		
+				
 		// Add each number the user enters to a list until the user enters 0
 		// Only positive integers accepted
 		while (num != 0) {
@@ -28,7 +31,6 @@ public class StoreInts {
 		DisplayInts(newList);
 	}
 	
-
 	/**
 	 * Adds a number to a list
 	 * @param list		List of Integers
