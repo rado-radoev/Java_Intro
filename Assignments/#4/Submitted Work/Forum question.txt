@@ -10,6 +10,10 @@ While (Ready()) {
     WashFace();
     GetDressed();
     DrinkCoffee();
+    if (Time.currentTime() == 07:00) {
+        LeaveForWork();
+        break;
+    }
 }
 
 If (raining) {
