@@ -1,3 +1,4 @@
+package MyHashMaps;
 public class HashCode_Point3d {
 
 	private double x;
