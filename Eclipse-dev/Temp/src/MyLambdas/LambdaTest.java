@@ -2,6 +2,8 @@ package MyLambdas;
 
 import java.io.PushbackInputStream;
 
+import org.omg.Messaging.SyncScopeHelper;
+
 public class LambdaTest {
 
 	public static void main(String[] args) {
@@ -36,6 +38,10 @@ public class LambdaTest {
 		// invoke method directly
 		convertIntToDouble(a -> a , 5);
 		System.out.println(convertIntToDouble((a) -> a , 5));
+		
+		Runnable r = () -> System.out.println("Print me");
+		new Thread (r).start();
+		new Thread ( () -> System.out.println("Print this!")).start();
 		
 	}
 	
