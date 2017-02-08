@@ -1,0 +1,23 @@
+For the lack of imagination I will go with the easy answer. I'll write up a cooking pasta algorithm below:
+1. Poor water in pot
+	- Fill pot halfway
+2. Salt water
+	- Add 2 tbsp
+3. Boil water
+	- For every pound of noodles add quarter of water
+4. Add pasta to boiling water
+	- Pour one pack of pasta in water
+	- Do not break pasta
+5. Stir pasta
+	- Every few minutes stir pasta so it doesn't stick
+6. Follow cooking time on package
+7. When cooking time is reached taste pasta
+	- If pasta is chewy it is cooked - remove post from stove
+        - if not chewy keep boiling until pasta is chewy
+8. Drain pasta
+	- If serving hot- add sauce right away
+	- If making salad - run noodles under cold water
+9. Serve pasta
+10. Enjoy pasta while it lasts
+
+Bon apetit!
