@@ -11,42 +11,44 @@ public class BinarySearchTest {
 		System.out.println(binarySearch(arr, 87));
 
 	}
-	
-	// Binary search recursion
+
+	// Helper method
 	public static int binarySearch(int[] a, int x) {
 		return binarySearch(a, x, 0, a.length - 1);
 	}
 	
+	// Recursion method
 	private static int binarySearch(int[] a, int x, int low, int high) {
 		if (low > high) {
 			return -1;
 		}
-		int middle = (low + high) / 2;
-		if (a[middle] == x) {
-			return middle;
+		int mid = (low + high) / 2;
+		if (a[mid] == x) {
+			return mid;
 		}
-		else if (a[middle] < x) {
-			return binarySearch(a, x, middle + 1, high);
+		else if (a[mid] < x) {
+			return binarySearch(a, x, mid + 1, high);
 		}
 		else {
-			return binarySearch(a, x, low, middle -1);
+			return binarySearch(a, x, low, mid -1);
 		}
 	}
 	
-	// Binary search no recursion
+	// No recursion method
 	public static int BinarySearchNoRecursion(int[] a, int x) {
 		int low = 0;
-		int high = a.length - 1;
+		int high = a.length -1;
+		
 		while (low < high) {
-			int middle = (low + high) / 2;
-			if (a[middle] == x) {
-				return middle;
+			int mid = (low + high) / 2;
+			if (a[mid] == x) {
+				return mid;
 			}
-			else if (a[middle] < x) {
-				low = middle + 1;
+			else if (a[mid] < x) {
+				low = mid + 1;
 			}
 			else {
-				high = middle - 1;
+				high = mid - 1;
 			}
 		}
 		if (a[low] == x) {
@@ -54,5 +56,4 @@ public class BinarySearchTest {
 		}
 		return -1;
 	}
-
 }
