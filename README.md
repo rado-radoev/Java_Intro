@@ -1,4 +1,3 @@
-# Java
 Introduction to Programming Using Java	
 CSE-41242
 This folder contains Assignements from UCSD Java Programming Certificate program
