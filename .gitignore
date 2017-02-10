@@ -20,6 +20,6 @@ hs_err_pid*
 /NetBeans/LambdaExpressions/nbproject/private/
 /NetBeans/LambdaExpressions/build/
 Eclipse Workspace/*
-~*.docx
-~*.tmp
+*~*.docx
+*~*.tmp
 /NetBeans/ArrayMin/nbproject/private/
