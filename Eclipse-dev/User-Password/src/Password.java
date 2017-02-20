@@ -15,6 +15,10 @@ public class Password {
      * Setting password.
      * @param password	Password as string
      */
+    public Password() {
+    	this(null);
+    }
+    
     public Password (String password) {
         setPassword(password);
     }
@@ -23,7 +27,7 @@ public class Password {
      * Password setter. Sets password if complexity checks are met.
      * @param password	Password as string
      */
-    private void setPassword(String password) {
+    public void setPassword(String password) {
         if (isPasswordValid()) {
             this.password = password;
         }
@@ -64,10 +68,10 @@ public class Password {
      * @return boolean true or false
      */
     private boolean isPasswordLenght(String password) {
-    	if (password.length() >= 8) {
+//    	if (!password.equals(null) && password.length() >= 8) {
     		return true;
-    	}
-    	return false;
+//    	}
+//    	return false;
     }
 
     /**
