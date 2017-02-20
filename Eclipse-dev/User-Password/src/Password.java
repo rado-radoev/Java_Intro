@@ -4,8 +4,13 @@ public class Password {
 	/**
 	 * Setting empty password field.
 	 */
-    private String password = null;
-
+    private String password = "Welcome1";
+ 
+    /**
+     * Default Password constructor
+     */
+    public Password() {}
+    
     /**
      * Setting password.
      * @param password	Password as string
