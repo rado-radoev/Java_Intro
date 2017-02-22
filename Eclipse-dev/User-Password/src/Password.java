@@ -4,13 +4,15 @@ public class Password {
 	/**
 	 * Setting empty password field.
 	 */
-    private String password = "Welcome1";
- 
+    private String password;
+
     /**
      * Default Password constructor
      */
-    public Password() {}
-    
+    public Password() {
+      this.password = "Welcome1"
+    }
+
     /**
      * Setting password.
      * @param password	Password as string
@@ -57,7 +59,7 @@ public class Password {
         }
         return false;
     }
-    
+
     /**
      * Checks password length
      * @param password	Password as string
