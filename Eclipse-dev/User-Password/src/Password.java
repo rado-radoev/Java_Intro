@@ -4,12 +4,14 @@ public class Password {
 	/**
 	 * Setting empty password field.
 	 */
-    private String password = "Welcome1";
+    private String password;
 
     /**
      * Default Password constructor
      */
-    public Password() {}
+    public Password() {
+        setPassword("Welcome1");
+    }
 
     /**
      * Setting password.
