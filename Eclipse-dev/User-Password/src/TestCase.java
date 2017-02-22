@@ -45,9 +45,7 @@ public class TestCase {
 				System.out.println("Enter password:");
 				input = scanner.next();
 				if (VerifyPassword(userPass, input)) {
-					System.out.println("User: " + userPass[0] + "\n" +
-							"Password: " + userPass[1] + "\n" +
-							"Welcome, " + userPass[0] + "!");
+					System.out.println("Welcome, " + userPass[0] + "!");
 				}
 				break;
 			}
