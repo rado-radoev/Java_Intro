@@ -3,6 +3,7 @@ public class ForLoop {
 	public static void main(String[] args) {
 		System.out.println(Factorial(10));
 		System.out.println(Facotiral(7));
+		System.out.println(Fact(2));
 
 	}
 	public static long Factorial (int n) {
@@ -19,5 +20,13 @@ public class ForLoop {
 			result *= i;
 		}
 		return result;
+	}
+	
+	public static int Fact (int i) {
+		int fact = 1;
+		for (int x = 0; i > x; i--) {
+			fact *= i;
+		}
+		return fact;
 	}
 }
