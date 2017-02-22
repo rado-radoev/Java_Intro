@@ -6,7 +6,6 @@ public class Password {
 	 */
     private String password = "Welcome1";
 
-
     /**
      * Default Password constructor
      */
