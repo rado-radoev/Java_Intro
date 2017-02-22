@@ -34,7 +34,7 @@ public class TestCase {
 			// Verify if the username is in the array on position 0. 
 			// If not ask again, else fall through
 			if (!VerifyUserExists(userPass)) {
-				System.out.println("User does not exist");
+				System.out.println("User does not exist.\n");
 				continue;
 			}
 	
