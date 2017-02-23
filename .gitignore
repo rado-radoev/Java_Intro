@@ -23,3 +23,6 @@ Eclipse Workspace/*
 *~*.docx
 *~*.tmp
 /NetBeans/ArrayMin/nbproject/private/
+*.classpath
+*.project
+*.settings
