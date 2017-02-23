@@ -14,6 +14,6 @@ hs_err_pid*
 Eclipse Workspace/*
 *~*.docx
 *~*.tmp
-*.classpath
-*.project
-*.settings
+.classpath
+.project
+.settings
