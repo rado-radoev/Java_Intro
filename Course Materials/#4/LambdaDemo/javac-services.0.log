@@ -1,87 +1,14 @@
-INFO	?	main	2017-01-22T02:37:20.155Z	org.javacs.Main#connectToNode	Connected to parent using socket on port 55282
-INFO	?	main	2017-01-22T02:37:20.305Z	org.javacs.JavaLanguageServer#doLint	Lint [d:\GitHub\Java\Course Materials\#4\LambdaDemo\v9\LambdaDemo.java]
-SEVERE	?	main	2017-01-22T02:37:23.957Z	org.javacs.Main$4#onError	Can't find configuration file for d:\GitHub\Java\Course Materials\#4\LambdaDemo\v9\LambdaDemo.java
-org.javacs.NoJavaConfigException: Can't find configuration file for d:\GitHub\Java\Course Materials\#4\LambdaDemo\v9\LambdaDemo.java
-	at org.javacs.JavaLanguageServer.lambda$findCompiler$21(JavaLanguageServer.java:479)
-	at java.util.Optional.orElseThrow(Unknown Source)
-	at org.javacs.JavaLanguageServer.findCompiler(JavaLanguageServer.java:479)
-	at org.javacs.JavaLanguageServer.findTree(JavaLanguageServer.java:809)
-	at org.javacs.JavaLanguageServer.lambda$doHover$34(JavaLanguageServer.java:983)
-	at java.util.Optional.ifPresent(Unknown Source)
-	at org.javacs.JavaLanguageServer.doHover(JavaLanguageServer.java:982)
-	at org.javacs.JavaLanguageServer.access$000(JavaLanguageServer.java:31)
-	at org.javacs.JavaLanguageServer$1.hover(JavaLanguageServer.java:118)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint._doAccept(LanguageServerEndpoint.xtend:130)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.doAccept(LanguageServerEndpoint.xtend:117)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend:114)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.handleMessage(LanguageEndpoint.xtend:67)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.lambda$connect$4(LanguageEndpoint.xtend:61)
-	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:46)
-	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:44)
-	at io.typefox.lsapi.services.json.StreamMessageReader.handleMessage(StreamMessageReader.xtend:128)
-	at io.typefox.lsapi.services.json.StreamMessageReader.listen(StreamMessageReader.xtend:61)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.connect(LanguageEndpoint.xtend:60)
-	at org.javacs.Main.run(Main.java:150)
-	at org.javacs.Main.main(Main.java:69)
-
-INFO	?	main	2017-01-22T02:37:26.548Z	org.javacs.JavaLanguageServer#doLint	Lint [d:\GitHub\Java\Course Materials\#4\LambdaDemo\v1\LambdaDemo.java]
-SEVERE	?	main	2017-01-22T02:37:29.410Z	org.javacs.Main$4#onError	Can't find configuration file for d:\GitHub\Java\Course Materials\#4\LambdaDemo\v1\LambdaDemo.java
-org.javacs.NoJavaConfigException: Can't find configuration file for d:\GitHub\Java\Course Materials\#4\LambdaDemo\v1\LambdaDemo.java
-	at org.javacs.JavaLanguageServer.lambda$findCompiler$21(JavaLanguageServer.java:479)
-	at java.util.Optional.orElseThrow(Unknown Source)
-	at org.javacs.JavaLanguageServer.findCompiler(JavaLanguageServer.java:479)
-	at org.javacs.JavaLanguageServer.access$600(JavaLanguageServer.java:31)
-	at org.javacs.JavaLanguageServer$1.didClose(JavaLanguageServer.java:227)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint._doAccept(LanguageServerEndpoint.xtend:202)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.doAccept(LanguageServerEndpoint.xtend:194)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend:114)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.handleMessage(LanguageEndpoint.xtend:67)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.lambda$connect$4(LanguageEndpoint.xtend:61)
-	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:46)
-	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:44)
-	at io.typefox.lsapi.services.json.StreamMessageReader.handleMessage(StreamMessageReader.xtend:128)
-	at io.typefox.lsapi.services.json.StreamMessageReader.listen(StreamMessageReader.xtend:61)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.connect(LanguageEndpoint.xtend:60)
-	at org.javacs.Main.run(Main.java:150)
-	at org.javacs.Main.main(Main.java:69)
-
-SEVERE	?	main	2017-01-22T02:37:31.510Z	org.javacs.Main$4#onError	Can't find configuration file for d:\GitHub\Java\Course Materials\#4\LambdaDemo\v9\LambdaDemo.java
-org.javacs.NoJavaConfigException: Can't find configuration file for d:\GitHub\Java\Course Materials\#4\LambdaDemo\v9\LambdaDemo.java
-	at org.javacs.JavaLanguageServer.lambda$findCompiler$21(JavaLanguageServer.java:479)
-	at java.util.Optional.orElseThrow(Unknown Source)
-	at org.javacs.JavaLanguageServer.findCompiler(JavaLanguageServer.java:479)
-	at org.javacs.JavaLanguageServer.access$600(JavaLanguageServer.java:31)
-	at org.javacs.JavaLanguageServer$1.didClose(JavaLanguageServer.java:227)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint._doAccept(LanguageServerEndpoint.xtend:202)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.doAccept(LanguageServerEndpoint.xtend:194)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend:114)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.handleMessage(LanguageEndpoint.xtend:67)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.lambda$connect$4(LanguageEndpoint.xtend:61)
-	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:46)
-	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:44)
-	at io.typefox.lsapi.services.json.StreamMessageReader.handleMessage(StreamMessageReader.xtend:128)
-	at io.typefox.lsapi.services.json.StreamMessageReader.listen(StreamMessageReader.xtend:61)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.connect(LanguageEndpoint.xtend:60)
-	at org.javacs.Main.run(Main.java:150)
-	at org.javacs.Main.main(Main.java:69)
-
-INFO	?	main	2017-01-22T02:37:34.725Z	org.javacs.JavaLanguageServer#doLint	Lint [d:\GitHub\Java\Course Materials\#4\FunctionX.java]
-SEVERE	?	main	2017-01-22T02:37:37.236Z	org.javacs.Main$4#onError	Can't find configuration file for d:\GitHub\Java\Course Materials\#4\FunctionX.java
+INFO	?	main	2017-02-26T08:41:53.070Z	org.javacs.Main#connectToNode	Connected to parent using socket on port 55282
+INFO	?	main	2017-02-26T08:41:53.322Z	org.javacs.JavaLanguageServer#doLint	Lint [d:\GitHub\Java\Course Materials\#4\FunctionX.java]
+SEVERE	?	main	2017-02-26T08:41:55.532Z	org.javacs.Main$4#onError	Can't find configuration file for d:\GitHub\Java\Course Materials\#4\FunctionX.java
 org.javacs.NoJavaConfigException: Can't find configuration file for d:\GitHub\Java\Course Materials\#4\FunctionX.java
 	at org.javacs.JavaLanguageServer.lambda$findCompiler$21(JavaLanguageServer.java:479)
 	at java.util.Optional.orElseThrow(Unknown Source)
 	at org.javacs.JavaLanguageServer.findCompiler(JavaLanguageServer.java:479)
-	at org.javacs.JavaLanguageServer.findTree(JavaLanguageServer.java:809)
-	at org.javacs.JavaLanguageServer.lambda$doHover$34(JavaLanguageServer.java:983)
-	at java.util.Optional.ifPresent(Unknown Source)
-	at org.javacs.JavaLanguageServer.doHover(JavaLanguageServer.java:982)
-	at org.javacs.JavaLanguageServer.access$000(JavaLanguageServer.java:31)
-	at org.javacs.JavaLanguageServer$1.hover(JavaLanguageServer.java:118)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint._doAccept(LanguageServerEndpoint.xtend:130)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.doAccept(LanguageServerEndpoint.xtend:117)
+	at org.javacs.JavaLanguageServer.access$600(JavaLanguageServer.java:31)
+	at org.javacs.JavaLanguageServer$1.didClose(JavaLanguageServer.java:227)
+	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint._doAccept(LanguageServerEndpoint.xtend:202)
+	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.doAccept(LanguageServerEndpoint.xtend:194)
 	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend:114)
 	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend)
 	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.handleMessage(LanguageEndpoint.xtend:67)
