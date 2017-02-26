@@ -7,6 +7,9 @@
  *
  */
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Calculations {
@@ -28,15 +31,28 @@ public class Calculations {
 		int number2 = scanner.nextInt();	
 		System.out.printf("Enter third number: ");
 		int number3 = scanner.nextInt();	
-
-		/** Make calculations.*/
-		Number.Sum(number1, number2, number3);
-		Number.Average(number1, number2, number3);
-		Number.Product(number1, number2, number3);
-		Number.Min(number1, number2, number3);
-		Number.Max(number1, number2, number3);
 		
 		/** Close scanner object.*/
 		scanner.close();
+		
+		List<Integer> list = new ArrayList<>();
+			list.add(Number2.Calculator(number1, number2, number3, (a,b,c) -> a + b + c));
+			list.add(Number2.Calculator(number1, number2, number3, (a,b,c) -> (a + b + c) / 3));
+			list.add(Number2.Calculator(number1, number2, number3, (a,b,c) -> a * b * c));
+			list.add(Number2.Calculator(number1, number2, number3, (a,b,c) -> {
+				int smallest1 = Math.min(a,b);
+				int smallest2 = Math.min(smallest1,c);
+				return smallest2;
+			}));
+			list.add(Number2.Calculator(number1, number2, number3, (a,b,c) -> {
+				int largest1 = Math.max(a, b);
+				int largest2 = Math.max(largest1, c);
+				return largest2;
+			}));
+		
+		list.parallelStream()
+		.forEach(System.out::println);
+		
+
 	}
 }

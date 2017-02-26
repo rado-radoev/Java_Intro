@@ -1,10 +1,11 @@
+import java.util.function.Consumer;
 
 public class Cat extends Pet{
 	
 	public Cat (String name) {
 		super(name);
 	}
-
+	
 	public void SayMiow () {
 		System.out.printf("%s says miow\n",getName());
 	}

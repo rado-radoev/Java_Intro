@@ -7,6 +7,8 @@ public class Main {
 
 		cat.CatchFish();
 		fish.Eat();
+		
+
 	}
 
 }

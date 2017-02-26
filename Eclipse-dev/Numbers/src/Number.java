@@ -1,3 +1,5 @@
+import java.util.function.Consumer;
+
 /**
  * 
  */
@@ -19,6 +21,12 @@ public class Number {
 	public static void Sum (int number1, int number2, int number3) {
 		int sum = number1 + number2 + number3;
 		System.out.printf("The sum of %s, %s and %s is: %s\n", number1, number2, number3, sum);
+	}
+	
+	public static int Calculator(int a, int b, int c, Calc calc, Consumer<Integer> consumer) 
+	{
+		consumer.accept(a);
+		return calc.calculate(a, b, c);
 	}
 	
 	/**

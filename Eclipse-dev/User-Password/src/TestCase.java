@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.function.Predicate;
 
 public class TestCase {
 	public static HashMap<User, Password> userMap = new HashMap<User, Password>();
