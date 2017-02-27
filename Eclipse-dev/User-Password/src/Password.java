@@ -5,7 +5,6 @@ public class Password {
 	 * Setting empty password field.
 	 */
     private String password = "Welcome1";
-
     /**
      * Default Password constructor
      */
