@@ -3,24 +3,17 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.function.Predicate;
 
 public class TestCase {
 	public static HashMap<User, Password> userMap = new HashMap<User, Password>();
 
 	public static void main(String[] args) throws AccessDeniedException {
 
-		// Instantiating default password to use
-		Password pass = new Password();
-
-		// Instantiating user objects
-		User user = new User("Bob", "user");
-		User user2 = new User("Jim", "user");
-		User user3 = new User("Liz", "super user");
-
 		// Adding users to map
-		userMap.put(user, pass);
-		userMap.put(user2, new Password("SuperMegaPassw0rd"));
-		userMap.put(user3, new Password("JavaIsTheBest1"));
+		userMap.put(new User("Bob", "user"), new Password());
+		userMap.put(new User("Jim", "user"), new Password("SuperMegaPassw0rd"));
+		userMap.put(new User("Liz", "super user"), new Password("JavaIsTheBest1"));
 
 		// Ask the user for username and password and verifies if they are correct
 		while (true) {
