@@ -4,12 +4,16 @@ public class Password {
 	/**
 	 * Setting empty password field.
 	 */
-    private String password = "Welcome1";
+    //private String password = "Welcome1";
+    private String password = null;
 
     /**
      * Default Password constructor
+     * Default password for newly Created user is Welcome1
      */
-    public Password() {}
+    public Password() {
+    	setPassword("Welcome1");
+    }
 
     /**
      * Setting password.
@@ -24,7 +28,7 @@ public class Password {
      * @param password	Password as string
      */
     private void setPassword(String password) {
-        if (isPasswordValid()) {
+        if (isPasswordValid(password)) {
             this.password = password;
         }
     }
@@ -50,9 +54,9 @@ public class Password {
      * Checks if password is valid, meeting all password complexity
      * @return boolean true or false
      */
-    private boolean isPasswordValid() {
-        if (isPasswordLenght(password) && hasPasswordNumber(password) &&
-        hasPasswordCapital(password)) {
+    private boolean isPasswordValid(String pass) {
+        if (isPasswordLenght(pass) && hasPasswordNumber(pass) &&
+        hasPasswordCapital(pass)) {
             return true;
         }
         return false;
@@ -60,11 +64,11 @@ public class Password {
 
     /**
      * Checks password length
-     * @param password	Password as string
+     * @param pass	Password as string
      * @return boolean true or false
      */
-    private boolean isPasswordLenght(String password) {
-    	if (password.length() >= 8) {
+    private boolean isPasswordLenght(String pass) {
+    	if (pass.length() >= 8) {
     		return true;
     	}
     	return false;
@@ -72,11 +76,11 @@ public class Password {
 
     /**
      * Checks if password has a Number
-     * @param password	Password as string
+     * @param pass	Password as string
      * @return	boolean true or false
      */
-    private boolean hasPasswordNumber(String password) {
-        for (Character c : PasswordToChar(password)) {
+    private boolean hasPasswordNumber(String pass) {
+        for (Character c : PasswordToChar(pass)) {
             if (Character.isDigit(c)) {
                 return true;
             }
@@ -86,11 +90,11 @@ public class Password {
 
     /**
      * Checks password has a Capital letter
-     * @param password	Password as string
+     * @param pass	Password as string
      * @return	boolean true or false
      */
-    private boolean hasPasswordCapital(String password) {
-        for (Character c : PasswordToChar(password)) {
+    private boolean hasPasswordCapital(String pass) {
+        for (Character c : PasswordToChar(pass)) {
             if (Character.isUpperCase(c)) {
                 return true;
             }
