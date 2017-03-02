@@ -12,6 +12,7 @@ public class Support implements ISupport {
 	 * @param input		input as Array. username is string and is first element in Array
 	 * @return			true if user exists. false if user does not exist.
 	 */
+	@Override
 	public boolean VerifyUserExists(String[] input)  {
 		if (input[0] == null) {
 			return false;
@@ -28,6 +29,7 @@ public class Support implements ISupport {
 	 * @return			true if passwords match
 	 * @throws AccessDeniedException	if passwords do not match an exception is thrown.
 	 */
+	@Override
 	public boolean VerifyPassword(String[] input, String pass) throws AccessDeniedException {
 		if (input[1].equals(pass)) {
 			return true;
@@ -43,6 +45,7 @@ public class Support implements ISupport {
 	 * @param user		username as String from user input
 	 * @return			array of username and password as string
 	 */
+	@Override
 	public String[] FindUserAndPassword(String user) {
 		String[] userAndPass = new String[2];
 
