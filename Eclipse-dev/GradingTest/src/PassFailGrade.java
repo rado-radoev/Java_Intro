@@ -39,10 +39,4 @@ public class PassFailGrade<T> implements Grade<T> {
 	public boolean includeInAverage() {
 		return false;
 	}
-
-	@Override
-	public int calculateAverage(T[] grade) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }

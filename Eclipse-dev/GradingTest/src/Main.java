@@ -18,7 +18,7 @@ public class Main {
 		System.out.println(pg.getClass().equals(PercentageGrade.class));
 		System.out.println(pg.toString());
 		System.out.println(pg.isPass());
-		System.out.println(pg.PercentToLetter(80));
+		System.out.println(pg.PercentToLetter(1));
 		
 		System.out.println();
 		

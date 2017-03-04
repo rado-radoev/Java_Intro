@@ -1,6 +1,5 @@
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Set;
 
 import javax.management.InvalidAttributeValueException;
 
@@ -15,7 +14,7 @@ public class PercentageGrade<T> implements Grade<T>{
 	public PercentageGrade(int grade) {
 		super();
 		setGrade(grade);
-		fillHashMap();
+		percentHashMap();
 	}
 
 	/**
@@ -51,10 +50,13 @@ public class PercentageGrade<T> implements Grade<T>{
 		return true;
 	}
 	
-	@Override
-	public int calculateAverage(T[] grade) {
-		
-		return 0;
+	
+	public int calculateAverage(int[] grade) {
+		int sum = 0;
+		for (Integer i : grade) {
+			sum += i;
+		}
+		return sum / grade.length;
 	}
 	
 	
@@ -66,11 +68,13 @@ public class PercentageGrade<T> implements Grade<T>{
 				return percentageGrades.get(grade);
 			}
 		}
-		throw new InvalidAttributeValueException("Invalid grade supplied to PercentToLetter");
+		throw new InvalidAttributeValueException(
+				"Invalid grade supplied to method PercentToLetter(int percent)"
+				);
 	}
 	
 	
-	private void fillHashMap() {
+	private void percentHashMap() {
 		int maxScore = 100;
 		for (int i = maxScore; i > 0; i--) {
 			if (i >= 97) {
