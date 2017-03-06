@@ -60,7 +60,7 @@ public class PercentageGrade<T> implements Grade<T>{
 	}
 	
 	
-	public String PercentToLetter(int percent) throws InvalidAttributeValueException {
+	public String toPercent(int percent) throws InvalidAttributeValueException {
 		Iterator<Integer> keySetIterator = percentageGrades.keySet().iterator();
 		while(keySetIterator.hasNext()) {
 			int grade = keySetIterator.next();
@@ -77,45 +77,22 @@ public class PercentageGrade<T> implements Grade<T>{
 	private void percentHashMap() {
 		int maxScore = 100;
 		for (int i = maxScore; i > 0; i--) {
-			if (i >= 97) {
-				percentageGrades.put(i, "A+");
-			}
-			else if (i >= 93 && i <= 96) {
+			if (i >= 90 && i <= 100) {
 				percentageGrades.put(i, "A");
 			}
-			else if (i >= 90 && i <= 92) {
-				percentageGrades.put(i, "A-");
-			}
-			else if (i >= 87 && i <= 89) {
-				percentageGrades.put(i, "B+");
-			}
-			else if (i >= 83 && i <= 86) {
+			else if (i >= 80 && i <= 89) {
 				percentageGrades.put(i, "B");
 			}
-			else if (i >= 80 && i <= 82) {
-				percentageGrades.put(i, "B-");
-			}
-			else if (i >= 77 && i <= 79) {
-				percentageGrades.put(i, "C+");
-			}
-			else if (i >= 73 && i <= 76) {
+			else if (i >= 70 && i <= 79) {
 				percentageGrades.put(i, "C");
 			}
-			else if (i >= 70 && i <= 72) {
-				percentageGrades.put(i, "C-");
-			}
-			else if (i >= 67 && i <= 69) {
-				percentageGrades.put(i, "D+");
-			}
-			else if (i >= 63 && i <= 66) {
+			else if (i >= 60 && i <= 69) {
 				percentageGrades.put(i, "D");
-			}
-			else if (i >= 60 && i <= 62) {
-				percentageGrades.put(i, "D-");
 			}
 			else {
 				percentageGrades.put(i, "F");
 			}
+			
 		}
 	}
 	

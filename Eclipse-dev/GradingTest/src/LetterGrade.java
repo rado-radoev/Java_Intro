@@ -2,6 +2,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import javax.management.InvalidAttributeValueException;
+
 import java.util.Set;
 
 public class LetterGrade<T> implements Grade<T> {
@@ -15,6 +18,7 @@ public class LetterGrade<T> implements Grade<T> {
 	public LetterGrade(String grade) {
 		super();
 		setGrade(grade);
+		letterHashMap();
 	}
 	
 	public LetterGrade() {
@@ -70,89 +74,42 @@ public class LetterGrade<T> implements Grade<T> {
 		return true;
 	}
 	
-	public int LetterToPercent (String letter) {
+	public T toPercent (T letter) throws InvalidAttributeValueException {
 		Set<Map.Entry<String, Integer>> mapEntrySet = letterGrades.entrySet();
 		Iterator<Entry<String, Integer>> mapEntrySetIterator = mapEntrySet.iterator();
 		
 		while (mapEntrySetIterator.hasNext()) {
 			Entry entry = mapEntrySetIterator.next();
-			if (entry.getKey().equals(letter)))	{
-				return entry.getValue();
+			if (entry.getKey().equals(letter))	{
+				return (T)entry.getValue();
 			}
 		}
+		throw new InvalidAttributeValueException(
+				"Invalid grade supplied to method LetterToPercent (String letter)"
+				);
 	}
 	
 	private void letterHashMap() {
 		int maxScore = 100;
-		String[] grades = {"A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F"};
+		String[] grades = {"A", "B", "C", "D", "F"};
 		for(String grade : grades) {
-			if (grade.equals("A+")) {
-				for (int i = 100; i >= 97; i--) {
-					letterGrades.put(grade, i);
-				}
+			if (grade.equals("A")) {
+				letterGrades.put(grade, 100);
 			}
-			else if (grade.equals("A")) {
-				for (int i = 96; i >= 93; i--) {
-					letterGrades.put(grade, i);
+			else if (grade.equals("B")) {	
+					letterGrades.put(grade, 89);
 				}
-			}
-			else if (grade.equals("A-")) {
-				for (int i = 92; i >= 90; i--) {
-					letterGrades.put(grade, i);
-				}
-			}
-			else if (grade.equals("B+")) {
-				for (int i = 89; i >= 87; i--) {
-					letterGrades.put(grade, i);
-				}
-			}
-			else if (grade.equals("B")) {
-				for (int i = 86; i >= 83; i--) {
-					letterGrades.put(grade, i);
-				}
-			}
-			else if (grade.equals("B-")) {
-				for (int i = 82; i >= 80; i--) {
-					letterGrades.put(grade, i);
-				}
-			}
-			else if (grade.equals("C+")) {
-				for (int i = 79; i >= 77; i--) {
-					letterGrades.put(grade, i);
-				}
-			}
 			else if (grade.equals("C")) {
-				for (int i = 76; i >= 73; i--) {
-					letterGrades.put(grade, i);
+					letterGrades.put(grade, 79);
 				}
-			}
-			else if (grade.equals("C-")) {
-				for (int i = 72; i >= 70; i--) {
-					letterGrades.put(grade, i);
-				}
-			}
-			else if (grade.equals("D+")) {
-				for (int i = 69; i >= 67; i--) {
-					letterGrades.put(grade, i);
-				}
-			}
 			else if (grade.equals("D")) {
-				for (int i = 66; i >= 63; i--) {
-					letterGrades.put(grade, i);
-				}
-			}
-			else if (grade.equals("D-")) {
-				for (int i = 62; i >= 60; i--) {
-					letterGrades.put(grade, i);
-				}
+					letterGrades.put(grade, 69);
 			}
 			else {
-				for (int i = 59; i >= 0; i--) {
-					letterGrades.put(grade, i);
-				}
+				letterGrades.put(grade, 0);
 			}
-		}		
 		}
+	}
 
 	
 	public int calculateAverage(T[] grade) {
