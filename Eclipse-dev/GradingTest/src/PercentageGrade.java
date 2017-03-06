@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.StringTokenizer;
 
 import javax.management.InvalidAttributeValueException;
 
@@ -33,7 +34,8 @@ public class PercentageGrade<T> implements Grade<T>{
 	
 	@Override
 	public String toString() {
-		return Integer.toString(grade);
+		String nativeGrade = Integer.toString(grade);
+		return nativeGrade;
 	}
 	
 	@Override
@@ -60,12 +62,13 @@ public class PercentageGrade<T> implements Grade<T>{
 	}
 	
 	
-	public String toPercent(int percent) throws InvalidAttributeValueException {
+	public T toPercent(T grade) throws InvalidAttributeValueException {
+		int gr = Integer.parseInt(grade.toString());
 		Iterator<Integer> keySetIterator = percentageGrades.keySet().iterator();
 		while(keySetIterator.hasNext()) {
-			int grade = keySetIterator.next();
-			if (grade == percent) {
-				return percentageGrades.get(grade);
+			int nextGrade = keySetIterator.next();
+			if (nextGrade == gr) {
+				return (T) percentageGrades.get(nextGrade);
 			}
 		}
 		throw new InvalidAttributeValueException(

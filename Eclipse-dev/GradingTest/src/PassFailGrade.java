@@ -1,3 +1,4 @@
+import javax.management.InvalidAttributeValueException;
 
 public class PassFailGrade<T> implements Grade<T> {
 
@@ -29,14 +30,20 @@ public class PassFailGrade<T> implements Grade<T> {
 	
 	@Override
 	public boolean isPass() {
-		if (this.isGrade()) {
-			return true;
-		}
-		return false;
+		return isGrade();
 	}
 	
 	@Override
 	public boolean includeInAverage() {
 		return false;
 	}
+
+	@Override
+	public T toPercent(T grade) throws InvalidAttributeValueException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
 }

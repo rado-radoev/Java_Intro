@@ -48,18 +48,10 @@ public class LetterGrade<T> implements Grade<T> {
 	@Override
 	public boolean isPass() {
 		switch (this.getGrade()) {
-		case "A+":
 		case "A":
-		case "A-":
-		case "B+":
 		case "B":
-		case "B-":
-		case "C+":
 		case "C":
-		case "C-":
-		case "D+":
 		case "D":
-		case "D-":
 			return true;
 		case "E":
 		case "F":
