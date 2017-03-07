@@ -8,26 +8,26 @@ public class Main {
 
 		ArrayList<Grade> grades = new ArrayList<Grade>();
 		grades.add(new LetterGrade<>("A"));
-		grades.add(new PercentageGrade(80));
+		grades.add(new PercentageGrade(90));
 		grades.add(new PassFailGrade(true));
 		
 		for (Grade grade : grades) {
-			System.out.println(grade.toString());
+			System.out.println("1. " + grade.toString());
 			if (grade.isPass()) {
-				System.out.print("Pass");
+				System.out.println("2. " + "Pass");
 			}
 			else {
-				System.out.print("Fail");
+				System.out.println("3. " + "Fail");
 			}
 			
 			if (grade.includeInAverage()) {
 				if (grade.getClass().getName() == LetterGrade.class.getName()) {
-					System.out.println();
-					System.out.println(grade.toPercent(grade.toString()));
+					System.out.println("4. " + grade.toPercent(grade.toString()));
+					System.out.println("\n");
 				}
 				else if (grade.getClass().getName() == PercentageGrade.class.getName()) {
-					System.out.println();
-					System.out.println(grade.toPercent(grade.toString()));
+					System.out.println("5. " + grade.toPercent(grade.toString()));
+					System.out.println("\n");
 				}
 			}
 		
