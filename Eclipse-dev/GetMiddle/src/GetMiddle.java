@@ -14,7 +14,7 @@ public class GetMiddle {
 		int middle = (word.length()) / 2;
 		StringBuilder newString = new StringBuilder();
 		
-		if (middle % 2 == 0) {
+		if (word.length() % 2 == 0) {
 			newString.append(word.charAt(middle - 1));
 			newString.append(word.charAt(middle));
 			return newString.toString();
