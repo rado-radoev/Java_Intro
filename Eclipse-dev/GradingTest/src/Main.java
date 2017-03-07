@@ -50,15 +50,19 @@ public class Main {
 			System.out.println();
 		}
 		
-		
-		int sum = 0;
-		for (Integer i : avgGrades) {
-			sum += i;
-		}
-		
-		System.out.println("\nThe average of all grades is: " + (sum / avgGrades.size()));
+	
+		System.out.println("\nThe average of all grades is: " + calculateAverage(avgGrades));
 			
 	}
 	
+	// Method that calculates the average student grades
+	public static int calculateAverage(ArrayList<Integer> averageGrades) {
+		int sum = 0;
+		for (Integer i : averageGrades) {
+			sum += i;
+		}
+		
+		return sum / averageGrades.size();
+	}
 }
 
