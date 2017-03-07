@@ -1,9 +1,8 @@
-import javax.management.InvalidAttributeValueException;
+//import javax.management.InvalidAttributeValueException;
 
-public interface Grade<T> {
-	public String toString();
-	public boolean isPass();
-	public boolean includeInAverage();
-	public T toPercent(T grade) throws InvalidAttributeValueException;
-//	public int toPercent(String grade) throws InvalidAttributeValueException;
+public interface Grade {
+	public String toString(); // Prints the grade in its native format
+	public boolean isPass();  // Returns true for passing grade, otherwise returns false
+	public boolean includeInAverage(); // Returns true for letter and numeric grades, but false for pass/fail grades
+//	public int toPercent() throws InvalidAttributeValueException; // Returns the grade as a percentage integer between 0 and 100
 }

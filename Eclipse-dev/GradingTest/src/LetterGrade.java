@@ -1,18 +1,21 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import javax.management.InvalidAttributeValueException;
 
-import java.util.Set;
 
-public class LetterGrade<T> implements Grade<T> {
+
+public class LetterGrade implements Grade {
 	
 	private String grade;
-	private HashMap<String, Integer> letterGrades = new HashMap<String, Integer>();
-
+	private HashMap<String, Integer> letterGrades = new HashMap<String, Integer>(); // KV pair of letter grades and their percent representation
+	
 	/**
+	 * Parameterized constructor
 	 * @param grade
 	 */
 	public LetterGrade(String grade) {
@@ -21,9 +24,14 @@ public class LetterGrade<T> implements Grade<T> {
 		letterHashMap();
 	}
 	
+
+	/**
+	 * Default Constructor
+	 * Starting grade is F
+	 */
 	public LetterGrade() {
-		
-	}
+		this("F");
+	} 
 
 	/**
 	 * @return the grade
@@ -39,12 +47,19 @@ public class LetterGrade<T> implements Grade<T> {
 		this.grade = grade;
 	}
 	
-	
+	/**
+	 * Default representation of the grade object - Letters are presented as strings
+	 * @return Letter grade as string
+	 */
 	@Override
 	public String toString() {
 		return this.grade.toString();
 	}
 
+	/**
+	 * If the letter is passing grade returns true, else false
+	 * @return boolean
+	 */
 	@Override
 	public boolean isPass() {
 		switch (this.getGrade()) {
@@ -61,19 +76,36 @@ public class LetterGrade<T> implements Grade<T> {
 		}
 	}
 	
+	/**
+	 * Letter grades can be included in the average
+	 * @return true
+	 */
 	@Override
 	public boolean includeInAverage() {
 		return true;
 	}
 	
-	public T toPercent (T letter) throws InvalidAttributeValueException {
+	
+		
+	/**
+	 * Method that returns the percent representation of a letter grade
+	 * If an invalid grade is entered an InvalidAttributeValueException
+	 * is thrown
+	 * Method used HashMap to iterate through all the keys (Letter Grades) and
+	 * find what is the respective percent
+	 * @param grade Letter grade as String
+	 * @return Letter grade in percentage representation of Integer type
+	 * @throws InvalidAttributeValueException
+	 */
+	@SuppressWarnings ("unchecked")
+	public int toPercent (String letter) throws InvalidAttributeValueException {
 		Set<Map.Entry<String, Integer>> mapEntrySet = letterGrades.entrySet();
 		Iterator<Entry<String, Integer>> mapEntrySetIterator = mapEntrySet.iterator();
 		
 		while (mapEntrySetIterator.hasNext()) {
-			Entry entry = mapEntrySetIterator.next();
+			Entry<String, Integer> entry = mapEntrySetIterator.next();
 			if (entry.getKey().equals(letter))	{
-				return (T)entry.getValue();
+				return entry.getValue();
 			}
 		}
 		throw new InvalidAttributeValueException(
@@ -81,8 +113,10 @@ public class LetterGrade<T> implements Grade<T> {
 				);
 	}
 	
+	/**
+	 * Private method that is used once to instantiate the Letter Grade hash map
+	 */
 	private void letterHashMap() {
-		int maxScore = 100;
 		String[] grades = {"A", "B", "C", "D", "F"};
 		for(String grade : grades) {
 			if (grade.equals("A")) {
@@ -101,11 +135,5 @@ public class LetterGrade<T> implements Grade<T> {
 				letterGrades.put(grade, 0);
 			}
 		}
-	}
-
-	
-	public int calculateAverage(T[] grade) {
-		LetterGrade<String> grade1 = new LetterGrade<String>();
-		return 0;
 	}
 }
