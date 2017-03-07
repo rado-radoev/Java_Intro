@@ -1,12 +1,26 @@
+import java.util.ArrayList;
+
 import javax.management.InvalidAttributeValueException;
 
-public class PassFailGrade<T> implements Grade<T> {
+public class PassFailGrade implements Grade {
 
 	private boolean grade;
 	
+	/**
+	 * Parameterized Constructor
+	 * @param grade
+	 */
 	public PassFailGrade(boolean grade) {
 		super();
 		setGrade(grade);
+	}
+	
+	/**
+	 * Default constructor
+	 * Grade is false by default
+	 */
+	public PassFailGrade() {
+		this(false);
 	}
 
 	/**
@@ -23,27 +37,42 @@ public class PassFailGrade<T> implements Grade<T> {
 		this.grade = grade;
 	}
 	
+	/**
+	 * String representation of the grade
+	 */
 	@Override
 	public String toString() {
 		return Boolean.toString(grade);
 	}
 	
+	/**
+	 * Method to return if the grade is passing or not
+	 * @return boolean
+	 */
 	@Override
 	public boolean isPass() {
 		return isGrade();
 	}
 	
+	/**
+	 * Pass Fail grade cannot be included in an average
+	 * @return false
+	 */
 	@Override
 	public boolean includeInAverage() {
 		return false;
 	}
 
-	@Override
-	public T toPercent(T grade) throws InvalidAttributeValueException {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * Method returns the pass fail grade as percentage
+	 * @return the pass or fail as Integer 0 - Fail, 100 - Pass
+	 */
+	public int toPercent(String grade) throws InvalidAttributeValueException {
+		int maxPercent = 100;
+		int minPercent = 0;
+		if (isPass()) {
+			return maxPercent;
+		}
+		return minPercent;
 	}
-
-	
-	
 }

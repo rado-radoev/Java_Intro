@@ -5,67 +5,86 @@ import javax.management.InvalidAttributeValueException;
 public class Main {
 
 	public static void main(String[] args) throws InvalidAttributeValueException {
-
-		ArrayList<Grade> grades = new ArrayList<Grade>();
-		grades.add(new LetterGrade<>("A"));
-		grades.add(new PercentageGrade(90));
-		grades.add(new PassFailGrade(true));
 		
-		for (Grade grade : grades) {
-			System.out.println("1. " + grade.toString());
-			if (grade.isPass()) {
-				System.out.println("2. " + "Pass");
-			}
-			else {
-				System.out.println("3. " + "Fail");
-			}
-			
-			if (grade.includeInAverage()) {
-				if (grade.getClass().getName() == LetterGrade.class.getName()) {
-					System.out.println("4. " + grade.toPercent(grade.toString()));
-					System.out.println("\n");
-				}
-				else if (grade.getClass().getName() == PercentageGrade.class.getName()) {
-					System.out.println("5. " + grade.toPercent(grade.toString()));
-					System.out.println("\n");
-				}
-			}
-		
-		}
-
-		
-		
-		
-		
-/*		LetterGrade lg = new LetterGrade("A");
-		System.out.println(lg.getGrade());
-		System.out.println(lg.getClass());
-		System.out.println(lg.getClass().equals(LetterGrade.class));
-		System.out.println(lg.toString());
-		System.out.println(lg.isPass());
-		System.out.println(lg.toPercent("A"));
-		
-		
-		System.out.println();
-		
-		PercentageGrade pg = new PercentageGrade(100);
-		System.out.println(pg.getGrade());
-		System.out.println(pg.getClass());
-		System.out.println(pg.getClass().equals(PercentageGrade.class));
-		System.out.println(pg.toString());
-		System.out.println(pg.isPass());
-		System.out.println(pg.toPercent(20));
-		
-		
-		System.out.println();
-		
+		// Crate letter grade object
+		LetterGrade lt = new LetterGrade("A");
+		// Create percentage grade object
+		PercentageGrade pg = new PercentageGrade(90);
+		// Create pass fail object
 		PassFailGrade pfg = new PassFailGrade(true);
-		System.out.println(pfg.isGrade());
-		System.out.println(pfg.getClass());
-		System.out.println(pfg.getClass().equals(PassFailGrade.class));
-		System.out.println(pfg.toString());
-		System.out.println(pfg.isPass());*/
 		
+		// Empty array list that will hold grade objects
+		ArrayList<Object> arr = new ArrayList<>();
+		// Empty array that will hold all grades as percentages so it will calclate the average sum
+		ArrayList<Integer> avgGrades = new ArrayList<>(); 
+		int sum = 0;
+		
+		// Add grade objects to array
+		arr.add(lt);
+		arr.add(pg);
+		arr.add(pfg);
+		
+		// Iterate through objects 
+		for (int i = 0; i < arr.size(); i++) {
+			Object grade = arr.get(i);
+			// If the grade is of type Letter Grade
+			if (grade.getClass().getName() == LetterGrade.class.getName()) {
+				// Cast grade object to Letter Grade class
+				LetterGrade letterGrade = LetterGrade.class.cast(grade);
+				if (letterGrade.isPass()) {
+					System.out.print(letterGrade.toString() + " PASS " +
+					letterGrade.toPercent(letterGrade.toString()));
+				}
+				else {
+					System.out.print(letterGrade.toString() + " FAIL " +
+							letterGrade.toPercent(letterGrade.toString()));
+				}
+				// Add to average grades array
+				avgGrades.add(letterGrade.toPercent(letterGrade.toString()));
+				System.out.println("\n");
+			}
+			// If the grade is of type Percentage Grade
+			else if (grade.getClass().getName() == PercentageGrade.class.getName()) {
+				// Cast grade object to Percentage Grade class
+				PercentageGrade percentGrade = PercentageGrade.class.cast(grade);
+				if (percentGrade.isPass()) {
+					System.out.print(percentGrade.toString() + " PASS " +
+							percentGrade.getGrade());
+				}
+				else {
+					System.out.print(percentGrade.toString() + " FAIL " +
+							percentGrade.getGrade());
+				}
+				// Add to average grades array
+				avgGrades.add(percentGrade.getGrade());
+				System.out.println("\n");
+			} else {
+				// If the grade is of type Pass Fail Grade
+				// Cast grade object to Pass Fail Grade class
+				PassFailGrade passFailGrade = PassFailGrade.class.cast(grade);
+				if (passFailGrade.isPass()) {
+					System.out.print(passFailGrade.toString() + " PASS " +
+							passFailGrade.toPercent(passFailGrade.toString()));
+				}
+				else {
+					System.out.print(passFailGrade.toString() + " FAIL " +
+							passFailGrade.toPercent(passFailGrade.toString()));
+				}
+				// Add to average grades array
+				avgGrades.add(passFailGrade.toPercent(passFailGrade.toString()));
+				System.out.println("\n");
+			}
+		}
+		
+		for (int i = 0; i < avgGrades.size(); i++) {
+			sum += avgGrades.get(i);
+		}
+		
+		System.out.println("Sum is: " + sum /  avgGrades.size());
 	}
+}		
+		
 
-}
+		
+
+
