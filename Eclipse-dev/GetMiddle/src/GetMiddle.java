@@ -6,7 +6,6 @@ public class GetMiddle {
 
 	public static void main(String[] args) {
 		System.out.println(getMiddle("test"));
-
 	}
 	
 	
@@ -21,5 +20,4 @@ public class GetMiddle {
 		}
 		return newString.append(word.charAt(middle)).toString();
 	  }
-
 }
