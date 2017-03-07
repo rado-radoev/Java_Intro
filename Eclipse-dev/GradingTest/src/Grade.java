@@ -1,5 +1,3 @@
-
-
 public interface Grade {
 	public String toString(); // Prints the grade in its native format
 	public boolean isPass();  // Returns true for passing grade, otherwise returns false

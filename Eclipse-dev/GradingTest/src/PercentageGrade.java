@@ -1,8 +1,4 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
-
-import javax.management.InvalidAttributeValueException;
 
 public class PercentageGrade implements Grade {
 

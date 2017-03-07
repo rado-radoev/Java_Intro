@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-
-import javax.management.InvalidAttributeValueException;
-
 public class PassFailGrade implements Grade {
 
 	private boolean grade;
