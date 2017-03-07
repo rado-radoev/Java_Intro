@@ -10,10 +10,10 @@ import javax.management.InvalidAttributeValueException;
 
 
 public class LetterGrade implements Grade {
-	
+
 	private String grade;
 	private HashMap<String, Integer> letterGrades = new HashMap<String, Integer>(); // KV pair of letter grades and their percent representation
-	
+
 	/**
 	 * Parameterized constructor
 	 * @param grade
@@ -23,7 +23,7 @@ public class LetterGrade implements Grade {
 		setGrade(grade);
 		letterHashMap();
 	}
-	
+
 
 	/**
 	 * Default Constructor
@@ -31,7 +31,7 @@ public class LetterGrade implements Grade {
 	 */
 	public LetterGrade() {
 		this("F");
-	} 
+	}
 
 	/**
 	 * @return the grade
@@ -46,14 +46,14 @@ public class LetterGrade implements Grade {
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
-	
+
 	/**
 	 * Default representation of the grade object - Letters are presented as strings
 	 * @return Letter grade as string
 	 */
 	@Override
 	public String toString() {
-		return this.grade.toString();
+		return getGrade();
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class LetterGrade implements Grade {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Letter grades can be included in the average
 	 * @return true
@@ -84,9 +84,9 @@ public class LetterGrade implements Grade {
 	public boolean includeInAverage() {
 		return true;
 	}
-	
-	
-		
+
+
+
 	/**
 	 * Method that returns the percent representation of a letter grade
 	 * If an invalid grade is entered an InvalidAttributeValueException
@@ -97,22 +97,38 @@ public class LetterGrade implements Grade {
 	 * @return Letter grade in percentage representation of Integer type
 	 * @throws InvalidAttributeValueException
 	 */
-	@SuppressWarnings ("unchecked")
-	public int toPercent (String letter) throws InvalidAttributeValueException {
+	// @SuppressWarnings ("unchecked")
+	// public int toPercent (String letter) throws InvalidAttributeValueException {
+	// 	Set<Map.Entry<String, Integer>> mapEntrySet = letterGrades.entrySet();
+	// 	Iterator<Entry<String, Integer>> mapEntrySetIterator = mapEntrySet.iterator();
+	//
+	// 	while (mapEntrySetIterator.hasNext()) {
+	// 		Entry<String, Integer> entry = mapEntrySetIterator.next();
+	// 		if (entry.getKey().equals(letter))	{
+	// 			return entry.getValue();
+	// 		}
+	// 	}
+	// 	throw new InvalidAttributeValueException(
+	// 			"Invalid grade supplied to method LetterToPercent (String letter)"
+	// 			);
+	// }
+
+	public int toPercent() {
 		Set<Map.Entry<String, Integer>> mapEntrySet = letterGrades.entrySet();
 		Iterator<Entry<String, Integer>> mapEntrySetIterator = mapEntrySet.iterator();
-		
+
 		while (mapEntrySetIterator.hasNext()) {
 			Entry<String, Integer> entry = mapEntrySetIterator.next();
-			if (entry.getKey().equals(letter))	{
-				return entry.getValue();
+			if (entry.getKey().equals(getGrade())) {
+				 return entry.getValue();
 			}
 		}
-		throw new InvalidAttributeValueException(
-				"Invalid grade supplied to method LetterToPercent (String letter)"
-				);
+		return 0;
+
 	}
-	
+
+
+
 	/**
 	 * Private method that is used once to instantiate the Letter Grade hash map
 	 */
@@ -122,7 +138,7 @@ public class LetterGrade implements Grade {
 			if (grade.equals("A")) {
 				letterGrades.put(grade, 100);
 			}
-			else if (grade.equals("B")) {	
+			else if (grade.equals("B")) {
 					letterGrades.put(grade, 89);
 				}
 			else if (grade.equals("C")) {

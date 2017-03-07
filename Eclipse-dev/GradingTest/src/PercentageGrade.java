@@ -8,7 +8,7 @@ public class PercentageGrade implements Grade {
 
 	private int grade;
 	private HashMap<Integer, String> percentageGrades = new HashMap<Integer, String>(); // KV pair of percentage grades and their letter representation
-	
+
 	/**
 	 * Parameterized Constructor
 	 * @param percentage
@@ -18,8 +18,8 @@ public class PercentageGrade implements Grade {
 		setGrade(grade);
 		percentHashMap();
 	}
-	
-	
+
+
 	/**
 	 * Default Constructor
 	 * Sets grade to 0 by default
@@ -41,15 +41,15 @@ public class PercentageGrade implements Grade {
 	public void setGrade(int percentageGrade) {
 		this.grade = percentageGrade;
 	}
-	
+
 	/**
 	 * @return Returns percent grade as string
 	 */
 	@Override
 	public String toString() {
-		return Integer.toString(grade);
+		return Integer.toString(getGrade());
 	}
-	
+
 	/**
 	 * Check if percentage grade is Passing or Failing
 	 * @return boolean
@@ -61,7 +61,7 @@ public class PercentageGrade implements Grade {
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Percentage grade can included in the average
 	 * @return true
@@ -70,7 +70,7 @@ public class PercentageGrade implements Grade {
 	public boolean includeInAverage() {
 		return true;
 	}
-	
+
 
 	/**
 	 * Converts percentage grade to letter grade
@@ -78,22 +78,26 @@ public class PercentageGrade implements Grade {
 	 * @return grade as String
 	 * @throws InvalidAttributeValueException
 	 */
-	public String toLetter(int grade) throws InvalidAttributeValueException {
-		Iterator<Integer> keySetIterator = percentageGrades.keySet().iterator();
-		while(keySetIterator.hasNext()) {
-			int nextGrade = keySetIterator.next();
-			if (nextGrade == grade) {
-				return percentageGrades.get(nextGrade);
-			}
-		}
-		throw new InvalidAttributeValueException(
-				"Invalid grade supplied to method PercentToLetter(int percent)"
-				);
+	// public String toLetter(int grade) throws InvalidAttributeValueException {
+	// 	Iterator<Integer> keySetIterator = percentageGrades.keySet().iterator();
+	// 	while(keySetIterator.hasNext()) {
+	// 		int nextGrade = keySetIterator.next();
+	// 		if (nextGrade == grade) {
+	// 			return percentageGrades.get(nextGrade);
+	// 		}
+	// 	}
+	// 	throw new InvalidAttributeValueException(
+	// 			"Invalid grade supplied to method PercentToLetter(int percent)"
+	// 			);
+	// }
+
+
+	public int toPercent () {
+		return getGrade();
 	}
-	
-	
+
 	/**
-	 * Private method that instantiates the percentage HashMap on 
+	 * Private method that instantiates the percentage HashMap on
 	 * object creation
 	 */
 	private void percentHashMap() {
@@ -114,7 +118,7 @@ public class PercentageGrade implements Grade {
 			else {
 				percentageGrades.put(i, "F");
 			}
-			
+
 		}
-	}	
+	}
 }
