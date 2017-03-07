@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class PercentageGrade implements Grade {
 
@@ -59,7 +60,7 @@ public class PercentageGrade implements Grade {
 	}
 
 	/**
-	 * Percentage grade can included in the average
+	 * Percentage grade can be included in the average
 	 * @return true
 	 */
 	@Override
@@ -74,20 +75,22 @@ public class PercentageGrade implements Grade {
 	 * @return grade as String
 	 * @throws InvalidAttributeValueException
 	 */
-	// public String toLetter(int grade) throws InvalidAttributeValueException {
-	// 	Iterator<Integer> keySetIterator = percentageGrades.keySet().iterator();
-	// 	while(keySetIterator.hasNext()) {
-	// 		int nextGrade = keySetIterator.next();
-	// 		if (nextGrade == grade) {
-	// 			return percentageGrades.get(nextGrade);
-	// 		}
-	// 	}
-	// 	throw new InvalidAttributeValueException(
-	// 			"Invalid grade supplied to method PercentToLetter(int percent)"
-	// 			);
-	// }
+	 public String toLetter() {
+	 	Iterator<Integer> keySetIterator = percentageGrades.keySet().iterator();
+	 	while(keySetIterator.hasNext()) {
+	 		int nextGrade = keySetIterator.next();
+	 		if (nextGrade == getGrade()) {
+	 			return percentageGrades.get(nextGrade);
+	 		}
+	 	}
+	 	return "F";
+	 }
 
-
+	/**
+	 * Returns the grade as percent
+	 * @return int representation of the grade
+	 */
+	@Override
 	public int toPercent () {
 		return getGrade();
 	}

@@ -4,9 +4,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import javax.management.InvalidAttributeValueException;
-
-
 
 public class LetterGrade implements Grade {
 
@@ -88,30 +85,11 @@ public class LetterGrade implements Grade {
 
 	/**
 	 * Method that returns the percent representation of a letter grade
-	 * If an invalid grade is entered an InvalidAttributeValueException
-	 * is thrown
-	 * Method used HashMap to iterate through all the keys (Letter Grades) and
+	 * Method uses HashMap to iterate through all the keys (Letter Grades) and
 	 * find what is the respective percent
 	 * @param grade Letter grade as String
 	 * @return Letter grade in percentage representation of Integer type
-	 * @throws InvalidAttributeValueException
 	 */
-	// @SuppressWarnings ("unchecked")
-	// public int toPercent (String letter) throws InvalidAttributeValueException {
-	// 	Set<Map.Entry<String, Integer>> mapEntrySet = letterGrades.entrySet();
-	// 	Iterator<Entry<String, Integer>> mapEntrySetIterator = mapEntrySet.iterator();
-	//
-	// 	while (mapEntrySetIterator.hasNext()) {
-	// 		Entry<String, Integer> entry = mapEntrySetIterator.next();
-	// 		if (entry.getKey().equals(letter))	{
-	// 			return entry.getValue();
-	// 		}
-	// 	}
-	// 	throw new InvalidAttributeValueException(
-	// 			"Invalid grade supplied to method LetterToPercent (String letter)"
-	// 			);
-	// }
-
 	public int toPercent() {
 		Set<Map.Entry<String, Integer>> mapEntrySet = letterGrades.entrySet();
 		Iterator<Entry<String, Integer>> mapEntrySetIterator = mapEntrySet.iterator();
@@ -123,7 +101,6 @@ public class LetterGrade implements Grade {
 			}
 		}
 		return 0;
-
 	}
 
 

@@ -35,6 +35,7 @@ public class PassFailGrade implements Grade {
 
 	/**
 	 * String representation of the grade
+	 * @return the grade as string
 	 */
 	@Override
 	public String toString() {
@@ -63,14 +64,6 @@ public class PassFailGrade implements Grade {
 	 * Method returns the pass fail grade as percentage
 	 * @return the pass or fail as Integer 0 - Fail, 100 - Pass
 	 */
-	// public int toPercent(String grade) throws InvalidAttributeValueException {
-	// 	int maxPercent = 100;
-	// 	int minPercent = 0;
-	// 	if (isPass()) {
-	// 		return maxPercent;
-	// 	}
-	// 	return minPercent;
-	// }
 
 	public int toPercent() {
 		int maxGrade = 100;
