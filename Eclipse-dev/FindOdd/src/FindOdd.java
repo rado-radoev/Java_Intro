@@ -1,27 +1,34 @@
 // https://www.codewars.com/kata/find-the-odd-int/train/java
-import java.util.ArrayList;
-
+import java.util.HashMap;
+import java.util.Random;
 
 
 public class FindOdd {
 
 	public static void main(String[] args) {
+		Random rnd = new Random(30);
+		HashMap<Integer, Integer> myHashMap = new HashMap<Integer, Integer>();
+		
+		
+		
 		int[] a = new int[10];
 		for (int i = 0; i < a.length; i++) {
-			a[i] = 1;
-			a[i] = i + 2;
+			a[i] = rnd.nextInt();
 		}
-		
-		ArrayList<Integer> newArray = new ArrayList<Integer>();
-		
+
 
 		for (int i : a) {
 			if (i % 2 != 0) {
-				boolean added = newArray.add(i);
-				System.out.println(added);				
+				if (!myHashMap.containsKey(i)) {
+					myHashMap.put(i, 1);
+				}
+				else {
+					myHashMap.get(i);
+				}
+				
 			}
 		}
-		
+
 		/**
 		 * Create hash map<Integer, Integer>
 		 * Loop through the array
@@ -30,11 +37,11 @@ public class FindOdd {
 		 * add value of 1
 		 * return a boolean while adding number to hashmap
 		 * if the return value is false, the number is already in the hashmap
-		 * iterate through the hash map and find the key 
+		 * iterate through the hash map and find the key
 		 * add 1 to the value
 		 * do this with all odd elements in the array
-		 * 
-		 * 
+		 *
+		 *
 		 * when you have to return the number of odd numbers
 		 * iterate through the hash map
 		 * grab the key and the max value in separate variables
@@ -44,17 +51,17 @@ public class FindOdd {
 		 * if not higher move to the next.
 		 * return the key
 		 */
-		
-		
-		
+
+
+
 	}
-	
+
 	public static int findIt(int[] A) {
 		// Loop through the array and find a number that appears odd number of times
-		
-		
-		
-		
+
+
+
+
 	  	return 0;
 	  }
 
