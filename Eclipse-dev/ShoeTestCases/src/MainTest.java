@@ -1,4 +1,3 @@
-import java.lang.reflect.Method;
 
 public class MainTest {
 
@@ -32,7 +31,7 @@ public class MainTest {
 	
 	
 	/**
-	 * Checks if
+	 * Checks if shoe color is correct
 	 * @param shoe	shoe object to test
 	 */
 	private static void ShoeColorIsNull (Shoe shoe) {
