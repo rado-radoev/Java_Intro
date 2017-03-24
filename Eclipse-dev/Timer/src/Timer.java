@@ -3,6 +3,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.Period;
+import java.time.zone.ZoneOffsetTransitionRule.TimeDefinition;
 import java.util.Scanner;
 
 public class Timer {
@@ -12,10 +13,10 @@ public class Timer {
 	private LocalTime leaveTime;
 	
 	
-	public Timer (String startTime, String leaveTime, String brakeTime) {
+	public Timer (String startTime, String brakeTime, String leaveTime) {
 		setStartTime(startTime);
-		setLeaveTime(leaveTime);
 		setBrakeTime(brakeTime);
+		setLeaveTime(leaveTime);
 	}
 	
 	
@@ -42,7 +43,7 @@ public class Timer {
 	public void setLeaveTime(String leaveTime) {
 		if (leaveTime.equals("")) {
 			this.leaveTime = startTime.plusHours(8);
-			this.leaveTime = this.leaveTime.plusMinutes(brakeTime.toMinutes());
+			this.leaveTime = this.leaveTime.plusMinutes(this.brakeTime.toMinutes());
 		}
 		else {
 			this.leaveTime = LocalTime.parse(leaveTime);
@@ -69,25 +70,29 @@ public class Timer {
 	
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 	Scanner input = new Scanner(System.in);
 	
 	System.out.print("What time did you start? (If time is omitted, default start time is 08:00 AM): ");
 	String startTimeInput = input.nextLine();
+//	LocalTime startTime = LocalTime.parse(startTimeInput);
 	
 	System.out.print("How long is your brake? (If time is omitted, default time is 30 min): ");
 	String brakeTimeInput = input.nextLine();
+//	Duration brakeTime = Duration.parse(brakeTimeInput);
 	
 	System.out.print("What time do you leave? (If time is omitted, default leave time is 04:30 PM): ");
 	String leaveTimeInput = input.nextLine();
-
+//	LocalTime leaveTime = LocalTime.parse(leaveTimeInput);
 	
 	
-	Timer t = new Timer(startTimeInput,leaveTimeInput,brakeTimeInput);
+	Timer t = new Timer(startTimeInput, brakeTimeInput, leaveTimeInput);
+	t.countdown();
+	
 	}
 	
 		
-	public static LocalTime calculateWorkTime(LocalTime startTime, LocalTime leaveTime) {
+	public LocalTime calculateWorkTime(LocalTime startTime, LocalTime leaveTime) {
 		long hoursDiff =  Duration.between(startTime, leaveTime).toHours();
 		LocalTime workHours = LocalTime.from(startTime);
 		workHours = workHours.plusHours(hoursDiff);
@@ -96,14 +101,14 @@ public class Timer {
 	}
 	
 	
-	public static LocalTime calculateWorkTime(LocalTime startTime, LocalTime leaveTime, Duration brakeTime) {
+	public LocalTime calculateWorkTime(LocalTime startTime, LocalTime leaveTime, Duration brakeTime) {
 		LocalTime workHours = calculateWorkTime(startTime, leaveTime);
 		workHours.plus(brakeTime);
 		
 		return workHours;
 	}
 	
-	public static LocalTime calculateBrakeTime(LocalTime startTime, LocalTime leaveTime) {
+	public LocalTime calculateBrakeTime(LocalTime startTime, LocalTime leaveTime) {
 		long hoursDiff =  Duration.between(startTime, leaveTime).toHours();
 		long brakeAt = ((hoursDiff / 2) * 3600) + 1800;
 		
@@ -113,49 +118,24 @@ public class Timer {
 		return brake;
 	}
 	
-	public static void countdown (LocalTime startTime, LocalTime leaveTime) throws InterruptedException {
+	public void countdown () throws InterruptedException {
 		LocalTime brakeTime = calculateBrakeTime(startTime, leaveTime);
 		LocalTime currentTime = LocalTime.now();
-		Duration timeLeft = Duration.between(startTime, leaveTime);
+		long timeLeft = Duration.between(currentTime, leaveTime).toMinutes();
 		Thread newThread = new Thread();
 		newThread.start();
 		
 		
 		while (currentTime.isAfter(startTime) && currentTime.isBefore(leaveTime)) {
 			newThread.sleep(1000);
-			System.out.println(timeLeft);
+			long minutes = timeLeft % 60;
+			long hours = timeLeft / 60;
+			
+			System.out.printf("Time left: %d %d%n", hours, minutes);
+			currentTime = LocalTime.now();
+			timeLeft = Duration.between(currentTime, leaveTime).toMinutes();
 			
 		}
 	}
 
 }
-
-
-
-/*
-1. What time did you start?
-If no time is entered -> 08:00:00
-2. How long is your lunch break (in minutes)
-if no time is entered assume -> 30 minutes
-3. What time do you want to leave?
-if no time is entered -> Calculate when you are leaving by adding 8 hours + the break to the start time
-else if time is entered calculate when you are leaving by taking out the leaving time from the start time + break
-
-calculate when the brake is:
-	get start time , get end time and find the middle
-	middle + 30 mint = start brake
-	
-Start a thread
-	counter == startTime
-	while startTime <= leavTime
-		Print time le
-
-
-
-
-
-
-
-
-
-*/
