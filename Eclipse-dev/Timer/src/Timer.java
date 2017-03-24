@@ -2,10 +2,73 @@ import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.Period;
 import java.util.Scanner;
 
 public class Timer {
+	
+	private LocalTime startTime;
+	private Duration brakeTime;
+	private LocalTime leaveTime;
+	
+	
+	public Timer (String startTime, String leaveTime, String brakeTime) {
+		setStartTime(startTime);
+		setLeaveTime(leaveTime);
+		setBrakeTime(brakeTime);
+	}
+	
+	
+	public LocalTime getStartTime() {
+		return this.startTime;
+	}
+	
+	
+	public void setStartTime(String startTime) {
+		if (startTime.equals("")) {
+			this.startTime = LocalTime.of(8, 0);
+		}
+		else {
+			this.startTime = LocalTime.parse(startTime);
+		}
+	}
+	
+	
+	public LocalTime getLeaveTime() {
+		return this.leaveTime;
+	}
+	
+	
+	public void setLeaveTime(String leaveTime) {
+		if (leaveTime.equals("")) {
+			this.leaveTime = startTime.plusHours(8);
+			this.leaveTime = this.leaveTime.plusMinutes(brakeTime.toMinutes());
+		}
+		else {
+			this.leaveTime = LocalTime.parse(leaveTime);
+		}	
+	}
+	
+	
+	public Duration brakeTime() {
+		return this.brakeTime;
+	}
+	
+	
+	public void setBrakeTime(String brakeTime) {
+		if (brakeTime.equals("")) {
+			this.brakeTime = Duration.ofMinutes(30);
+		}
+		else {
+			this.brakeTime = Duration.parse(brakeTime);
+		}
+	}
 
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 	Scanner input = new Scanner(System.in);
 	
@@ -18,48 +81,51 @@ public class Timer {
 	System.out.print("What time do you leave? (If time is omitted, default leave time is 04:30 PM): ");
 	String leaveTimeInput = input.nextLine();
 
-	LocalTime startTime;
-	
-	if (startTimeInput.equals("")) {
-		startTime = LocalTime.of(8, 0);
-	}
-	else {
-		startTime = LocalTime.parse(startTimeInput);
-	}
-
-	Duration brakeTime;
-	if (brakeTimeInput.equals("")) {
-		brakeTime = Duration.ofMinutes(30);
-	}
-	else {
-		brakeTime = Duration.parse(brakeTimeInput);
-	}
 	
 	
-	LocalTime leaveTime;
-	if (leaveTimeInput.equals("")) {
-		leaveTime = startTime.plusHours(8);
-		leaveTime = leaveTime.plusMinutes(brakeTime.toMinutes());
-	}
-	else {
-		leaveTime = LocalTime.parse(leaveTimeInput);
-	}
-	
-	//calculateTime(startTime, leaveTime, brakeTime);
-	calculateBrakeTime(startTime, leaveTime); 
-	
+	Timer t = new Timer(startTimeInput,leaveTimeInput,brakeTimeInput);
 	}
 	
 		
-	public static void calculateTime(LocalTime startTime, LocalTime leaveTime, Duration brakeTime) {
+	public static LocalTime calculateWorkTime(LocalTime startTime, LocalTime leaveTime) {
+		long hoursDiff =  Duration.between(startTime, leaveTime).toHours();
+		LocalTime workHours = LocalTime.from(startTime);
+		workHours = workHours.plusHours(hoursDiff);
 		
+		return workHours;
+	}
+	
+	
+	public static LocalTime calculateWorkTime(LocalTime startTime, LocalTime leaveTime, Duration brakeTime) {
+		LocalTime workHours = calculateWorkTime(startTime, leaveTime);
+		workHours.plus(brakeTime);
+		
+		return workHours;
 	}
 	
 	public static LocalTime calculateBrakeTime(LocalTime startTime, LocalTime leaveTime) {
 		long hoursDiff =  Duration.between(startTime, leaveTime).toHours();
-		long hoursDiffMiddle = hoursDiff / 2;
+		long brakeAt = ((hoursDiff / 2) * 3600) + 1800;
+		
+		LocalTime brake = LocalTime.from(startTime);
+		brake = brake.plusSeconds(brakeAt);
+		
+		return brake;
+	}
+	
+	public static void countdown (LocalTime startTime, LocalTime leaveTime) throws InterruptedException {
+		LocalTime brakeTime = calculateBrakeTime(startTime, leaveTime);
+		LocalTime currentTime = LocalTime.now();
+		Duration timeLeft = Duration.between(startTime, leaveTime);
+		Thread newThread = new Thread();
+		newThread.start();
 		
 		
+		while (currentTime.isAfter(startTime) && currentTime.isBefore(leaveTime)) {
+			newThread.sleep(1000);
+			System.out.println(timeLeft);
+			
+		}
 	}
 
 }
@@ -78,6 +144,11 @@ else if time is entered calculate when you are leaving by taking out the leaving
 calculate when the brake is:
 	get start time , get end time and find the middle
 	middle + 30 mint = start brake
+	
+Start a thread
+	counter == startTime
+	while startTime <= leavTime
+		Print time le
 
 
 
