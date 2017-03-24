@@ -17,8 +17,7 @@ public class Timer {
 	
 	System.out.print("What time do you leave? (If time is omitted, default leave time is 04:30 PM): ");
 	String leaveTimeInput = input.nextLine();
-	
-	LocalDate today = LocalDate.now();
+
 	LocalTime startTime;
 	
 	if (startTimeInput.equals("")) {
@@ -39,23 +38,27 @@ public class Timer {
 	
 	LocalTime leaveTime;
 	if (leaveTimeInput.equals("")) {
-		leaveTime = LocalTime.of(16, 30);
+		leaveTime = startTime.plusHours(8);
+		leaveTime = leaveTime.plusMinutes(brakeTime.toMinutes());
 	}
 	else {
 		leaveTime = LocalTime.parse(leaveTimeInput);
 	}
 	
-	
-	
-	calculateTime(startTime, leaveTime, brakeTime);
-	
-	
-	
+	//calculateTime(startTime, leaveTime, brakeTime);
+	calculateBrakeTime(startTime, leaveTime); 
 	
 	}
 	
+		
+	public static void calculateTime(LocalTime startTime, LocalTime leaveTime, Duration brakeTime) {
+		
+	}
 	
-	public static void calculateTime (LocalTime startTime, LocalTime leaveTime, Duration brakeTime) {
+	public static LocalTime calculateBrakeTime(LocalTime startTime, LocalTime leaveTime) {
+		long hoursDiff =  Duration.between(startTime, leaveTime).toHours();
+		long hoursDiffMiddle = hoursDiff / 2;
+		
 		
 	}
 
@@ -72,8 +75,16 @@ if no time is entered assume -> 30 minutes
 if no time is entered -> Calculate when you are leaving by adding 8 hours + the break to the start time
 else if time is entered calculate when you are leaving by taking out the leaving time from the start time + break
 
-split the work time to 2 - break is from the middle + 30 minutes.
+calculate when the brake is:
+	get start time , get end time and find the middle
+	middle + 30 mint = start brake
 
-every 20 minutes from start time make command prompt blink take your eyes of the monitor for 20 seconds
-every 1 hour rotate your eyes.
+
+
+
+
+
+
+
+
 */
