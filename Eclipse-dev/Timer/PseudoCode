@@ -1,0 +1,28 @@
+Countdown timer app
+
+The application will ask when did you start
+	it will accept a time in the form of 8.00 8:00 etc. 	look at TimeParse
+
+The application will then ask when do you finish
+	it will accept a time in the form of 4.30 4:30 16:30 16.30 etc. 	look at TimeParse
+	
+The application will then ask how long is the lunch break
+	it will accept time in minutes 15/30/60/90 etc
+	
+
+Lunch time will be 4.30 hours after start time 
+	IE. if you have started at 8 AM the break will be at 12.30 
+	
+15 minutes before the break dispaly a warning
+5 minutes before the break display another warning
+at brake time display go to break
+
+The application will start counting down from start time to end time every 5 seconds.
+
+How to code it:
+
+LocalTime
+LocalDateTime
+Duration
+Period
+???
