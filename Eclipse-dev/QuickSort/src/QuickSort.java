@@ -1,0 +1,75 @@
+
+public class QuickSort {
+
+	private int[] numbers;
+	private int number;
+	
+	public void sort(int[] values) {
+		// check if empty or null array
+		if (values == null || values.length == 0) {
+			return;
+		}
+		this.numbers = values;
+		number = values.length;
+		quickSort(0, number - 1);
+	}
+	
+	private void quickSort(int low, int high) {
+		int i = low;
+		int j = high;
+		
+		// Get the pivot element from the middle of the list
+		int pivot = numbers[low + (high - low) / 2];
+		
+		//Divide into to lists
+		while (i <= j) {
+			// if the current value from the left list is smaller than the pivot element
+			// then get the next element from the left list
+			while (numbers[i] < pivot) {
+				i++;
+			}
+			
+			// if the current value from the right list is larger than the pivot element
+			// then get the next element from the right list
+			while (numbers[j] > pivot) {
+				j--;
+			}
+			
+			// if we have found a value in the left list which is larger than the pivot element
+			// and if we have found a value in the right list which is smaller than the pivot element
+			// then we exchange the values. 
+			// When done we increase i and j
+			if (i <= j) {
+				exchange(i, j);
+				i++;
+				j--;
+			}
+		}
+		
+		// Recursion
+		if (low < j) {
+			quickSort(low, j);
+		}
+		if (i < high) {
+			quickSort(i, high);
+		}
+	}
+	
+	private void exchange(int i, int j) {
+		int temp = numbers[i];
+		numbers[i] = numbers[j];
+		numbers[j] = temp;
+	}
+	
+	
+	public static void main(String[] args) {
+		QuickSort qs = new QuickSort();
+		
+		int[] arr = {5,8,0,4,2,57,990,1,123,34,67,89,0,1,2,3,46,89,-8};
+		qs.sort(arr);
+
+	}
+	
+	
+
+}
