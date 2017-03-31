@@ -7,7 +7,7 @@ public class Timer2 {
 	
 	private static String start;
 	private static String end;
-	private static long brake;
+	private static String brake;
 	private static LocalTime startTime;
 	private static LocalTime endTime;
 	private static Duration brakeDuration;
@@ -30,29 +30,60 @@ public class Timer2 {
 		endTime = endTime.plus(brakeDuration);
 		
 	}
-
-	public static void main(String[] args) throws InterruptedException {
 	
+	private static LocalTime checkEndTime(String end) {
+		LocalTime time;
+		if (end.equals("")) {
+			time = startTime.plusHours(8);
+		}
+		else {
+			time = LocalTime.parse(end);	
+		}
+		return time;
+	}
+
+	private static LocalTime checkStartTime(String start) {
+		LocalTime time;
+		if (start.equals("")) {
+			time = LocalTime.parse("08:00");
+		}
+		else {
+			time = LocalTime.parse(start);
+		}
+		return time;
+	}
+	
+	private static Duration checkBrakeTime(String brake) {
+		long brakeLong;
+		try {
+			brakeLong = Long.parseLong(brake);
+		} catch (Exception e) {
+			brakeLong = 30;
+		}
+		
+		return Duration.ofMinutes(brakeLong);
+	}
+	
+	public static void main(String[] args) throws InterruptedException {
+		// Create input stream
 		Scanner input = new Scanner(System.in);
+		
 		
 		System.out.print("Enter start time: ");
 		start = input.nextLine();
 		
 		System.out.print("Enter brake duration (in minutes): ");
-		brake = input.nextLong();
+		brake = input.nextLine();
 		
 		System.out.print("Enter end time: ");
 		end = input.nextLine();
 		
-		if (end.equals("")) {
-			endTime = startTime.plusHours(8);
-		}
-		else {
-			endTime = LocalTime.parse(end);	
-		}
 		
-		startTime = LocalTime.parse(start);
-		brakeDuration = Duration.ofMinutes(brake);
+		brakeDuration = checkBrakeTime(brake);
+		startTime = checkStartTime(start);
+		endTime = checkEndTime(end);	
+
+		
 		input.close();
 		
 		calculateEndTime(startTime, brakeDuration);
